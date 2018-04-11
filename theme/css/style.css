@@ -1188,7 +1188,11 @@ img {
     z-index: 20;
     font-family: 'Fira Sans', sans-serif;
     line-height: 1em;
-    padding-bottom: 6em
+    padding-bottom: 6em;
+    /* ##### begin jn ##### */
+    background: #dedede;
+    color: #272727;
+    /* ##### end jn ##### */   
 }
 
 .credits {
@@ -1215,6 +1219,18 @@ img {
 .credits-software {
     float: right
 }
+
+/* ##### begin jn ##### */
+.credits-locale {
+  display: inline-block !important;
+}
+
+.credits-locale .icon,
+.credits-locale i,
+.credits-locale svg {
+  color: #f23d3d !important;
+}
+/* ##### end jn ##### */ 
 
 #blog-author {
     position: relative;
