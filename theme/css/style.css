@@ -1123,6 +1123,14 @@ html.menu-active,
   line-height: 1.875em;
 }
 
+#about-intro-headline {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 2.5em;
+}
+
 
 /*
 ###############################################################################
