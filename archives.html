@@ -4,7 +4,8 @@
 <!-- ##### BEGIN HEAD ##### -->
 <head>
   <!-- ##### BEGIN TITLE ##### -->
-  <title>JORDY NELSON - Archives</title>
+  <title>
+JORDY NELSON - Archives  </title>
   <!-- ##### END TITLE ##### -->
   
   <!-- ##### BEGIN FAVICON ##### -->
@@ -67,7 +68,7 @@
     <meta property="og:title" content="JORDY NELSON" />
     <meta property="og:description" content="PA Dutch Born. Detroit Raised. Baltimore Based." />
     <meta property="og:url" content="" />
-      <meta property="og:image" content="/beehive.jpg" />
+      <meta property="og:image" content="./theme/images/beehive.jpg" />
   <!-- ##### END OG ##### -->
   <!-- ##### BEGIN TWITTER CARD ##### -->
   <!-- ##### BEGIN TWITTER CARD ##### -->
@@ -82,8 +83,9 @@
   <div class="nav-wrapper">
     <p class="nav-label">Menu</p>
     <ul>
-
-
+          <!-- ##### BEGIN DISPLAY_PAGES_ON_MENU ##### -->
+          PAGES: {'slug': 'About'}
+              <li  role="presentation"><a href="/"><built-in method title of str object at 0x00000142C38B5C38></a></li>
     </ul>
   </div>
 </nav>
@@ -100,7 +102,7 @@
           </span>
         </nav>
         <h1 class="post-title">JORDY NELSON - Archives</h1>
-            <div class="blog-cover cover" style="background-image: url('beehive.jpg')">            
+            <div class="blog-cover cover" style="background-image: url('./theme/images/beehive.jpg')">            
         
       </div>
     </header>    
@@ -111,30 +113,30 @@
   <article class="post">
     <div class="inner">
       <dl>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry.html">Test Entry</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry10.html">Test Entry10</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry11.html">Test Entry11</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry12.html">Test Entry12</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry2.html">Test Entry2</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry3.html">Test Entry3</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry4.html">Test Entry4</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry5.html">Test Entry5</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry6.html">Test Entry6</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry7.html">Test Entry7</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry8.html">Test Entry8</a></dd>
-          <dt>Wed 11 April 2018</dt>
-          <dd><a href="/test-entry9.html">Test Entry9</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry.html">Test Entry</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry10.html">Test Entry10</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry11.html">Test Entry11</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry12.html">Test Entry12</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry2.html">Test Entry2</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry3.html">Test Entry3</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry4.html">Test Entry4</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry5.html">Test Entry5</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry6.html">Test Entry6</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry7.html">Test Entry7</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry8.html">Test Entry8</a></dd>
+          <dt>2018-04-11</dt>
+          <dd><a href="/2018/04/test-entry9.html">Test Entry9</a></dd>
       </dl>
     </div>
   </article>
@@ -145,13 +147,21 @@
     <footer id="footer" class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <span class="credits-software">Published with <a class="an-link" href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+          <span id="credits-software" class="credits">Published with <a class="an-link" href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <span class="credits-locale"><a class="an-link" href="">Made with <i class="icon fa fa-heart"></i> in Baltimore</a></span>
+          <span id="credits-locale" class="credits"><a class="an-link" href="">Made with <i class="icon fa fa-heart"></i> in Baltimore</a></span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <span class="credits-theme">Theme <a class="an-link" href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span id="credits-theme" class="credits">Theme <a class="an-link" href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <div id="credits-social" class="credits">
+            <span id="credits-social-linkedin" class="icon"><a href="https://www.linkedin.com/in/jordynelson/"><i class="fab fa-linkedin"></i></a></span>
+            <span id="credits-social-github" class="icon"><a href="htts://github.com/jordy248"><i class="fab fa-github"></i></a></span>
+          </div>
         </div>
       </div>
     </footer>
