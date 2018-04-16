@@ -1116,6 +1116,13 @@ html.menu-active,
 ###############################################################################
 */
 
+#blog-header .inner {
+  text-shadow: 0px 0px 50px #333,
+               0px 0px 150px #333,
+               -20px -5px 150px #333,
+               20px 5px 150px #333 !important;
+}
+
 #about-intro {
   padding: 35px 10px;
   font-family: 'Lato', Verdana, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -1476,9 +1483,26 @@ html.menu-active,
   display: inline-block
 }
 
-.credits-locale .icon,
-.credits-locale i,
-.credits-locale svg {
+.credits .icon,
+.credits .icon svg {
+  font-size: 24px;
+  color: inherit;
+  transition: 333ms all ease;
+}
+
+#credits-social .icon,
+#credits-social .icon svg {
+  margin: 0px 5px;
+}
+
+#credits-social .icon:hover,
+#credits-social .icon:hover svg {
+  color: #f26a3d;
+}
+
+#credits-locale .icon,
+#credits-locale i,
+#credits-locale svg {
   color: #f23d3d !important;
 }
 
@@ -2052,7 +2076,7 @@ html.menu-active,
   position: relative;
   display: block;
   height: auto;
-  margin: -1px 25px;
+  margin: -20px 0px;
   padding: 0.666em 1em;
   z-index: 100;
   border: 1px solid #c2c7cc;
@@ -2104,10 +2128,10 @@ html.menu-active,
 
 .pagination .pagination-info {
   position: relative;
+  display: inline-block;
   height: 2.666em;
   left: 0;
   z-index: 50;
-  display: block;
   font-size: 0.75em;
   line-height: 2.666em;
 }
