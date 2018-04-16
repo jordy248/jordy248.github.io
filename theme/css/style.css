@@ -2093,6 +2093,10 @@ html.menu-active,
   text-decoration: none;
 }
 
+.pagination .inner {
+  text-align: center;
+}
+
 .pagination .pagination-prev {
   float: right;
   padding-left: 1.333em
