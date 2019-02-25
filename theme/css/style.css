@@ -1428,7 +1428,9 @@ html.menu-active,
 */
 
 #footer {
-  position: relative;
+  position: absolute;
+  width: 100%;
+  height: auto;
   z-index: 20;
   font-family: 'Fira Sans', sans-serif;
   line-height: 1.5em;
