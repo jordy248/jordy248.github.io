@@ -1,0 +1,48 @@
+// _pagination.scss
+
+.post {
+    text-align: center;
+
+    .post-title {
+        color: $color-red;
+        
+        a {
+            color: $color-red;
+            text-decoration: none;
+            @include mxn-link-animation($color-red, $color-red, $color-gray);
+        }
+    }
+
+    .post-meta {
+        display: block;
+
+        a {
+            color: $color-gray;
+            text-decoration: none;
+        }
+    }
+}
+
+.pagination-container {
+    text-align: center;
+
+    .pagination {
+        min-width: 50%;
+        color: $color-rust;
+        padding: 10px !important; /* overrides bootstrap .pagination rule */
+        border: 1px solid $color-rust;
+    
+        a {
+            color: $color-rust;
+            @include mxn-link-animation($color-rust, $color-rust, $color-teal);
+        }
+
+        .pagination-info {
+            display: block;
+        }
+
+        .pagination-prev {
+            display: inline-block;
+        }
+    }
+}

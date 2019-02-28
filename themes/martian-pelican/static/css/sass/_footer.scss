@@ -1,0 +1,57 @@
+// _footer.scss
+
+#footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    z-index: 20;
+    font-family: $font-family-body;
+    line-height: 1.5em;
+    padding-top: 1.5em;
+    padding-bottom: 10em;
+    background: $color-rust;
+    color: $color-white;
+
+    a {
+        color: $color-white;
+        text-decoration: none;
+    }
+
+    .an-link {
+        @include mxn-link-animation($color-white, $color-white, $color-gray);
+    }
+
+    .credits {
+        display: block;
+        text-align: center;
+        font-size: 1em;
+        line-height: 1.5em;
+        padding: 1.1em 0;
+        overflow: auto;
+        opacity: 0.5;
+
+        .icon {
+            margin: 0px 5px;
+            font-size: 24px;
+
+            a {
+                transition: 333ms all ease;
+            }
+
+            &:hover {
+                a {
+                    color: $color-gray;
+                }
+            }
+        }
+    }
+}
+
+#credits-locale {
+    a {
+        .icon {
+            color: $color-gray !important;
+        }
+    }
+}
