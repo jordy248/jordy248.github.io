@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-  <title>Jordy Nelson - Tag test</title>
+  <title>Test</title>
 
 
   <meta name="HandheldFriendly" content="True" />
@@ -40,6 +40,55 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+
+  <link href="../../2019/02/test.html" rel="canonical" />
+
+    <meta name="description" content="Test post">
+
+    <meta name="author" content="Jordy Nelson">
+
+    <meta name="tags" content="pelican">
+    <meta name="tags" content="test">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Jordy Nelson"/>
+<meta property="og:title" content="Test"/>
+<meta property="og:description" content="Test post"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../2019/02/test.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-02-27 10:20:00-05:00"/>
+<meta property="article:modified_time" content="2019-02-27 10:20:00-05:00"/>
+<meta property="article:author" content="../../author/jordy-nelson">
+  <meta property="article:publisher" content="https://www.facebook.com/jordy.nelson248" />
+<meta property="article:section" content="Test"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="article:tag" content="test"/>
+<meta property="og:image" content="../../theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Test",
+  "headline": "Test",
+  "datePublished": "2019-02-27 10:20:00-05:00",
+  "dateModified": "2019-02-27 10:20:00-05:00",
+  "author": {
+    "@type": "Person",
+    "name": "Jordy Nelson",
+    "url": "../../author/jordy-nelson"
+  },
+  "image": "../../theme/images/post-bg.jpg",
+  "url": "../../2019/02/test.html",
+  "description": "Test post"
+}
+</script>
 </head>
 <!-- TODO : Body class -->
 <body class="home-template">
@@ -54,9 +103,14 @@
     </ul>
   </div>
 </nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header id="blog-header" class="has-cover">
+    <header id="post-header" class="has-cover">
       <div class="inner">
         <nav id="navigation">
             <span id="home-button" class="nav-button">
@@ -66,56 +120,70 @@
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
           </span>
         </nav>
-        <h1 class="post-title">Tag test</h1>
-        <span class="blog-description">Posts: 1</span>
-          <div class="blog-cover cover" style="background-image: url('../../theme/images/post-bg.jpg')">
+        <h1 class="post-title">Test</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="../../author/jordy-nelson">Jordy Nelson</a>
+            | <time datetime="27 Feb 2019">27 Feb 2019</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <span class="post-meta"> | Updated on 27 Feb 2019</span>
+            <div class="post-cover cover" style="background-image: url('../../theme/images/post-bg.jpg')">
       </div>
     </header>
 
   <section id="wrapper">
     <a class="hidden-close"></a>
 
-<div id="index" class="container">
-  <main class="content" role="main">
-    <div class="extra-pagination">
-<nav class="pagination" role="pagination">
-  <div class="inner">
-    <span class="pagination-info">Page 1 / 1</span>
-    <div class="clear"></div>
-  </div>
-</nav>
-    </div>
-
+    <!-- Post content -->
+    <main class="content" role="main">
         <article class="post">
         <div class="inner">
-            <header class="post-header">
-                <h2 class="post-title"><a href="../../2019/02/test.html" rel="bookmark" title="Permalink to Test">Test</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="../../author/jordy-nelson">Jordy Nelson</a>
-                     | <time datetime="27 Feb 2019">27 Feb 2019</time>
-                </span>
+            <section class="post-content">
+                <p>This is the content of a test post.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Test&amp;url=../../2019/02/test.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=../../2019/02/test.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=../../2019/02/test.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="../../tag/pelican">pelican</a><a href="../../tag/test">test</a>                </aside>
+
                 <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        Test post
-                    </p>
+
+
                 </section>
-<p>
-  <a data-disqus-identifier="/2019/02/test.html" href="../../2019/02/test.html#disqus_thread">comments</a>
-</p>
+
+                <script type="text/javascript">
+                    var disqus = 'jordynelson';
+                    var disqus_shortname = 'jordynelson';
+                    var disqus_identifier = '/2019/02/test.html';
+                    var disqus_url = '../../2019/02/test.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/2019/02/test.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
             </div>
         </article>
-
-<nav class="pagination" role="pagination">
-  <div class="inner">
-    <span class="pagination-info">Page 1 / 1</span>
-    <div class="clear"></div>
-  </div>
-</nav>
-  </main>
-</div>
+    </main>
       <!-- TODO : Body class -->
     <div id="body-class" style="display: none;" class=""></div>
 
