@@ -774,17 +774,27 @@ img {
 }
 #footer .credits .icon {
   margin: 0px 5px;
-  font-size: 2em;
 }
 #footer .credits .icon a {
   transition: 333ms all ease;
 }
 #footer .credits .icon:hover a {
-  color: #484A47;
+  color: #D1D5DE;
 }
 
 #credits-locale a .icon {
   color: #484A47 !important;
+}
+
+#credits-social .icon {
+  font-size: 2em;
+  transition: 333ms all ease;
+}
+#credits-social .icon a i {
+  transition: 333ms all ease;
+}
+#credits-social .icon:hover a i {
+  color: #D1D5DE;
 }
 
 .post {

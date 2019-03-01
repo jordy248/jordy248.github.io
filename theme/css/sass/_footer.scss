@@ -34,7 +34,6 @@
 
         .icon {
             margin: 0px 5px;
-            font-size: 2em;
 
             a {
                 transition: 333ms all ease;
@@ -54,5 +53,26 @@
         .icon {
             color: $color-gray !important;
         }
+    }
+}
+
+#credits-social {
+    .icon {
+        font-size: 2em;
+        transition: 333ms all ease;
+
+        a {
+            i {
+                transition: 333ms all ease;
+            }
+        }
+    
+    &:hover {
+        a {
+            i {
+                color: $color-white;
+            }
+        }
+    }
     }
 }
