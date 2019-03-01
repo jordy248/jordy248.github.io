@@ -7,6 +7,7 @@
     height: auto;
     z-index: 20;
     font-family: $font-family-body;
+    font-size: 18px;
     line-height: 1.5em;
     padding-top: 1.5em;
     padding-bottom: 10em;
@@ -33,7 +34,7 @@
 
         .icon {
             margin: 0px 5px;
-            font-size: 24px;
+            font-size: 2em;
 
             a {
                 transition: 333ms all ease;
@@ -41,7 +42,7 @@
 
             &:hover {
                 a {
-                    color: $color-gray;
+                    color: $color-white;
                 }
             }
         }

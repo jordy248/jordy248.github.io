@@ -661,6 +661,7 @@ img {
   height: auto;
   z-index: 20;
   font-family: "Raleway", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 18px;
   line-height: 1.5em;
   padding-top: 1.5em;
   padding-bottom: 10em;
@@ -773,7 +774,7 @@ img {
 }
 #footer .credits .icon {
   margin: 0px 5px;
-  font-size: 24px;
+  font-size: 2em;
 }
 #footer .credits .icon a {
   transition: 333ms all ease;
