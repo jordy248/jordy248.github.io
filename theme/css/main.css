@@ -1058,6 +1058,25 @@ img {
 }
 
 /*
+### ------------- ###
+### begin article ###
+### ------------- ###
+*/
+.cover-credits {
+  font-family: "Raleway", Verdana, Arial, Helvetica, sans-serif;
+  color: #484A47;
+}
+.cover-credits span {
+  display: block;
+  font-size: 0.75em;
+}
+
+/*
+### ----------- ###
+### end article ###
+### ----------- ###
+*/
+/*
 ### ----------- ###
 ### end imports ###
 ### ----------- ###
