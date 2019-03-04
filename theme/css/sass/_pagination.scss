@@ -2,12 +2,13 @@
 
 .post {
     text-align: center;
+    font-family: $font-family-headline;
 
     .post-title {
+        font-family: $font-family-headline;
         color: $color-red;
         
         a {
-            color: $color-red;
             text-decoration: none;
             @include mxn-link-animation($color-red, $color-red, $color-gray);
         }
