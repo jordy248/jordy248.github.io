@@ -1,4 +1,4 @@
-// _main-variables.scss
+// _article.scss
 
 /*
 ### ------------- ###
@@ -13,6 +13,24 @@
     span {
         display: block;
         font-size: 0.75em;
+        opacity: 0.5;
+    }
+}
+
+.article-pq-container {
+    @include mxn-gradient-animation(270deg, $color-rust, $color-teal, $color-red);
+    display: block;
+    width: 75vw;
+    /* background: linear-gradient($color-rust, $color-teal); */
+    position: relative;
+    left: -12.5vw;
+    padding: 5px 10px;
+
+    p {
+        font-family: $font-family-headline;
+        color: $color-white;
+        font-size: 1.5em;
+        line-height: 1.25em;
     }
 }
 

@@ -1069,6 +1069,60 @@ img {
 .cover-credits span {
   display: block;
   font-size: 0.75em;
+  opacity: 0.5;
+}
+
+.article-pq-container {
+  background: linear-gradient(270deg, #A37774, #5C6D70, #E88873);
+  background-size: 400% 400%;
+  -webkit-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
+  -moz-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
+  display: block;
+  width: 75vw;
+  /* background: linear-gradient($color-rust, $color-teal); */
+  position: relative;
+  left: -12.5vw;
+  padding: 5px 10px;
+}
+@-webkit-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.article-pq-container p {
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+  color: #D1D5DE;
+  font-size: 1.5em;
+  line-height: 1.25em;
 }
 
 /*
