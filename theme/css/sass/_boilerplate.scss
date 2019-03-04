@@ -678,4 +678,39 @@ img {
 ### --------------------- ###
 */
 
+/*
+###############################################################################
+######################
+### BEGIN PROGRESS ###
+######################
+###############################################################################
+*/
 
+.progress-container {
+    position: fixed;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: opacity ease-out 1s;
+  }
+  
+  .progress-container.ready {
+    opacity: 0.2;
+  }
+  
+  .progress-bar {
+    display: block;
+    width: 0;
+    height: 1px;
+    background: $color-red;
+    box-shadow: 0 0 1px $color-red, 0 0 3px $color-red;
+  }
+  
+  /*
+  ####################
+  ### END PROGRESS ###
+  ####################
+  */

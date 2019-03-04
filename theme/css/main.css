@@ -611,6 +611,41 @@ img {
 ### end theme boilerplate ###
 ### --------------------- ###
 */
+/*
+###############################################################################
+######################
+### BEGIN PROGRESS ###
+######################
+###############################################################################
+*/
+.progress-container {
+  position: fixed;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: opacity ease-out 1s;
+}
+
+.progress-container.ready {
+  opacity: 0.2;
+}
+
+.progress-bar {
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #E88873;
+  box-shadow: 0 0 1px #E88873, 0 0 3px #E88873;
+}
+
+/*
+####################
+### END PROGRESS ###
+####################
+*/
 #blog-header {
   display: block;
   position: relative;
@@ -772,6 +807,13 @@ img {
   overflow: auto;
   opacity: 0.5;
 }
+#footer .credits span {
+  display: inline-block;
+}
+#footer .credits a {
+  flex: 1;
+  color: #484A47;
+}
 #footer .credits .icon {
   margin: 0px 5px;
 }
@@ -788,6 +830,7 @@ img {
 
 #credits-social .icon {
   transition: 333ms all ease;
+  font-size: 2em;
 }
 #credits-social .icon a i {
   font-size: 1.5em;
