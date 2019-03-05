@@ -13,7 +13,7 @@
 
 @mixin mxn-gradient-animation($angle, $color1, $color2, $color3) {
         background: linear-gradient($angle, $color1, $color2, $color3);
-        background-size: 400% 400%;
+        background-size: 600% 600%;
         -webkit-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
         -moz-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
         animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;

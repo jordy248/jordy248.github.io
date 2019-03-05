@@ -18,19 +18,29 @@
 }
 
 .article-pq-container {
-    @include mxn-gradient-animation(270deg, $color-rust, $color-teal, $color-red);
     display: block;
-    width: 75vw;
-    /* background: linear-gradient($color-rust, $color-teal); */
-    position: relative;
-    left: -12.5vw;
     padding: 5px 10px;
 
     p {
         font-family: $font-family-headline;
-        color: $color-white;
         font-size: 1.5em;
         line-height: 1.25em;
+
+        @include mxn-gradient-animation(270deg, $color-rust, $color-teal, $color-red);
+        background-size: 1000% 1000%;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    p:before {
+        content: '"';
+        font-family: $font-family-headline;
+        font-size: 5em;
+        position: absolute;
+        font-weight: 900;
     }
 }
 
