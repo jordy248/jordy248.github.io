@@ -33,14 +33,14 @@
         background-clip: text;
         font-weight: 900;
         text-align: center;
-    }
 
-    p:before {
-        content: '"';
-        font-family: $font-family-headline;
-        font-size: 5em;
-        position: absolute;
-        font-weight: 900;
+        &:before {
+            content: '"';
+            font-family: $font-family-headline;
+            font-size: 5em;
+            position: absolute;
+            font-weight: 900;
+        }
     }
 }
 
