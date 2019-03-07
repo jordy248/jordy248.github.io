@@ -617,41 +617,6 @@ img {
 ### --------------------- ###
 */
 /*
-###############################################################################
-######################
-### BEGIN PROGRESS ###
-######################
-###############################################################################
-*/
-.progress-container {
-  position: fixed;
-  width: 100%;
-  height: 4px;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-  background: transparent;
-  transition: opacity ease-out 1s;
-}
-
-.progress-container.ready {
-  opacity: 0.2;
-}
-
-.progress-bar {
-  display: block;
-  width: 0;
-  height: 1px;
-  background: #E88873;
-  box-shadow: 0 0 1px #E88873, 0 0 3px #E88873;
-}
-
-/*
-####################
-### END PROGRESS ###
-####################
-*/
-/*
 ### ------------- ###
 ### BEGIN IMPORTS ###
 ### ------------- ###
@@ -3019,77 +2984,6 @@ html.menu-active,
 ### begin article ###
 ### ------------- ###
 */
-.cover-credits {
-  font-family: "Raleway", Verdana, Arial, Helvetica, sans-serif;
-  color: #484A47;
-}
-.cover-credits span {
-  display: block;
-  font-size: 0.75em;
-  opacity: 0.5;
-}
-
-.article-pq-container {
-  display: block;
-  padding: 5px 10px;
-}
-.article-pq-container p {
-  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
-  font-size: 1.5em;
-  line-height: 1.25em;
-  background: linear-gradient(270deg, #A37774, #5C6D70, #E88873);
-  background-size: 600% 600%;
-  -webkit-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
-  -moz-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
-  animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
-  background-size: 1000% 1000%;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-weight: 900;
-  text-align: center;
-}
-@-webkit-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@-moz-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-.article-pq-container p:before {
-  content: '"';
-  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
-  font-size: 5em;
-  position: absolute;
-  font-weight: 900;
-}
-
 /*
 ### ------------------ ###
 ### BEGIN POST ENTRIES ###
@@ -3245,15 +3139,19 @@ html.menu-active,
 }
 
 .post-content a {
-  border-bottom: 1px solid #f26a3d;
+  border-bottom: 1px solid #E88873;
 }
-
-.post-content a:hover,
+.post-content a:hover {
+  color: #E88873;
+}
 .post-content a:focus {
-  color: #f26a3d;
+  color: #E88873;
 }
-
-.post-content img,
+.post-content img {
+  max-width: none;
+  width: 110%;
+  margin-left: -5%;
+}
 .post-content .fluid-width-video-wrapper {
   max-width: none;
   width: 110%;
@@ -3538,6 +3436,153 @@ html.menu-active,
 ### ---------------- ###
 ### END POST ENTRIES ###
 ### ---------------- ###
+*/
+/*
+### ------------------ ###
+### begin progress bar ###
+### ------------------ ###
+*/
+.progress-container {
+  position: fixed;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: opacity ease-out 1s;
+}
+
+.progress-container.ready {
+  opacity: 0.2;
+}
+
+.progress-bar {
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #E88873;
+  box-shadow: 0 0 1px #E88873, 0 0 3px #E88873;
+}
+
+/*
+### ---------------- ###
+### end progress bar ###
+### ---------------- ###
+*/
+/* 
+### ------------------------------ ###
+### begin article markdown classes ###
+### ------------------------------ ###
+*/
+.cover-credits {
+  font-family: "Raleway", Verdana, Arial, Helvetica, sans-serif;
+  color: #484A47;
+}
+.cover-credits span {
+  display: block;
+  font-size: 0.75em;
+  opacity: 0.5;
+}
+
+.article-content-container:before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 5px;
+  background: #D1D5DE;
+  margin: auto auto;
+}
+.article-content-container:after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 5px;
+  background: #D1D5DE;
+  margin: auto auto;
+}
+
+.article-pq-container {
+  display: block;
+  padding: 5px 10px;
+}
+.article-pq-container p {
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  background: linear-gradient(270deg, #A37774, #5C6D70, #E88873);
+  background-size: 600% 600%;
+  -webkit-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
+  -moz-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
+  background-size: 1000% 1000%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 900;
+  text-align: center;
+}
+@-webkit-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.article-pq-container p:before {
+  content: '"';
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 5em;
+  position: absolute;
+  font-weight: 900;
+}
+
+.article-image-container {
+  display: block;
+  text-align: center;
+}
+.article-image-container img {
+  margin-top: 2.5em;
+  margin-bottom: 0.5em;
+}
+.article-image-container p {
+  font-family: "Raleway", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 0.75em;
+  color: #484A47;
+}
+
+/* 
+### ---------------------------- ###
+### end article markdown classes ###
+### ---------------------------- ###
 */
 /*
 ### ----------- ###
