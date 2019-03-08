@@ -12,15 +12,15 @@
     padding-top: 1.5em;
     padding-bottom: 10em;
     background: $color-rust;
-    color: $color-white;
+    color: $color-lightgray;
 
     a {
-        color: $color-white;
+        color: $color-lightgray;
         text-decoration: none;
     }
 
     .an-link {
-        @include mxn-link-animation($color-white, $color-white, $color-gray);
+        @include mxn-link-animation($color-lightgray, $color-lightgray, $color-darkgray);
     }
 
     .credits {
@@ -38,7 +38,7 @@
         
         a {
             flex: 1;
-            color: $color-gray;
+            color: $color-darkgray;
         }
 
         .icon {
@@ -50,7 +50,7 @@
 
             &:hover {
                 a {
-                    color: $color-white;
+                    color: $color-lightgray;
                 }
             }
         }
@@ -60,7 +60,7 @@
 #credits-locale {
     a {
         .icon {
-            color: $color-gray !important;
+            color: $color-darkgray !important;
         }
     }
 }
@@ -80,7 +80,7 @@
         &:hover {
             a {
                 i {
-                    color: $color-white;
+                    color: $color-lightgray;
                 }
             }
         }

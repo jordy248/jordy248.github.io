@@ -10,7 +10,7 @@
         
         a {
             text-decoration: none;
-            @include mxn-link-animation($color-red, $color-red, $color-gray);
+            @include mxn-link-animation($color-red, $color-red, $color-darkgray);
         }
     }
 
@@ -18,7 +18,7 @@
         display: block;
 
         a {
-            color: $color-gray;
+            color: $color-darkgray;
             text-decoration: none;
         }
     }
