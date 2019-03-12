@@ -5,22 +5,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://jordynelson.io/</loc>
-<lastmod>2019-03-08T12:27:20-00:00</lastmod>
+<lastmod>2019-03-12T08:52:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/archives.html</loc>
-<lastmod>2019-03-08T12:27:20-00:00</lastmod>
+<lastmod>2019-03-12T08:52:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/tags.html</loc>
-<lastmod>2019-03-08T12:27:20-00:00</lastmod>
+<lastmod>2019-03-12T08:52:42-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://jordynelson.io/about</loc>
+<lastmod>2019-03-12T08:21:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -54,28 +61,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://jordynelson.io/category/test</loc>
-<lastmod>2019-03-01T08:29:00-04:56</lastmod>
+<lastmod>2019-03-12T08:21:00-04:56</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/tag/pelican</loc>
-<lastmod>2019-03-01T08:29:00-04:56</lastmod>
+<lastmod>2019-03-12T08:21:00-04:56</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/tag/test</loc>
-<lastmod>2019-03-01T08:29:00-04:56</lastmod>
+<lastmod>2019-03-12T08:21:00-04:56</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/author/jordy-nelson</loc>
-<lastmod>2019-03-05T20:05:05-04:56</lastmod>
+<lastmod>2019-03-12T08:21:00-04:56</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
