@@ -571,6 +571,13 @@
         background-clip: text;
         font-weight: 900;
         text-align: center;
+
+        p {
+            &:before {
+                @include mxn-gradient-animation(270deg, $color-rust, $color-teal, $color-red);
+            }
+
+        }
     }
 }
 
@@ -587,7 +594,6 @@
             content: '"';
             font-family: $font-family-headline;
             font-size: 5em;
-            position: absolute;
             font-weight: 900;
         }
     }
