@@ -1569,7 +1569,6 @@ html.menu-active,
   padding: 6em 0;
   text-align: center;
 }
-
 #blog-header:after {
   position: absolute;
   width: 32em;
@@ -1580,30 +1579,32 @@ html.menu-active,
   content: "";
   background: #e5e4e1;
 }
-
-#blog-header .inner {
-  max-width: 40em;
-}
-
 #blog-header.has-cover {
   padding: 9em 0 10em;
   background: #000;
   overflow: hidden;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-
-.author-template #blog-header:after,
 #blog-header.has-cover:after {
   display: none;
 }
+#blog-header .inner {
+  max-width: 40em;
+}
 
-.paged #blog-header.has-cover,
-.tag-template #blog-header {
+.author-template #blog-header:after {
+  display: none;
+}
+.author-template #blog-header.has-cover {
+  padding: 6em 0;
+}
+
+.paged #blog-header.has-cover {
   padding: 4em 0;
 }
 
-.author-template #blog-header.has-cover {
-  padding: 6em 0;
+.tag-template #blog-header {
+  padding: 4em 0;
 }
 
 .blog-cover {
@@ -1616,7 +1617,6 @@ html.menu-active,
   background: no-repeat scroll center center/cover #000;
   animation: 0.5s ease-in forwards fadein;
 }
-
 .blog-cover:after {
   position: absolute;
   width: 100%;
@@ -1636,7 +1636,6 @@ html.menu-active,
   margin: 1em;
   z-index: 200;
 }
-
 .blog-logo img {
   display: block;
   margin: 0 auto;
@@ -1648,11 +1647,21 @@ html.menu-active,
   z-index: 10;
   margin: 0;
   padding: 0;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+  color: #fff;
   font-weight: 700;
   font-size: 2em;
   line-height: 1em;
   text-decoration: none;
+  text-shadow: 3px 3px 1px #A37774;
+}
+.blog-name a {
+  text-decoration: none;
+  font-weight: inherit;
+  color: inherit;
+}
+.blog-name:hover a {
+  color: #A37774;
 }
 
 .home-template .blog-name {
@@ -1661,16 +1670,6 @@ html.menu-active,
 
 .has-cover .blog-name {
   color: #fff;
-}
-
-.blog-name a {
-  text-decoration: none;
-  font-weight: inherit;
-  color: inherit;
-}
-
-.blog-name:hover a {
-  color: #f26a3d;
 }
 
 .blog-description {
@@ -3485,15 +3484,7 @@ html.menu-active,
   background: #D1D5DE;
   margin: auto auto;
 }
-
-.article-pq-container {
-  display: block;
-  padding: 5px 10px;
-}
-.article-pq-container p {
-  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
-  font-size: 1.5em;
-  line-height: 1.25em;
+.article-content-container.an-grad {
   background: linear-gradient(270deg, #A37774, #5C6D70, #E88873);
   background-size: 600% 600%;
   -webkit-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
@@ -3538,6 +3529,16 @@ html.menu-active,
   100% {
     background-position: 0% 50%;
   }
+}
+
+.article-pq-container {
+  display: block;
+  padding: 5px 10px;
+}
+.article-pq-container p {
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.25em;
 }
 .article-pq-container p:before {
   content: '"';
