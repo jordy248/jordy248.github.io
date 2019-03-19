@@ -1,3 +1,3 @@
 jQuery(document).ready(function() {
-    jQuery('body').removeClass('loading');
+//    jQuery('body').removeClass('loading');
 })

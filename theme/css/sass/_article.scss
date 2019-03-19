@@ -167,6 +167,9 @@
 }
 
 .post-content {
+
+    text-align: left;
+
     a {
         border-bottom: 1px solid $color-rust;
         
@@ -543,6 +546,7 @@
 }
 
 .article-content-container {
+    text-align: center;
 
     &:before {
         content: "";
