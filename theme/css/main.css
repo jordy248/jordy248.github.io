@@ -277,8 +277,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden; }
+  body .spinner {
+    display: none;
+    visibility: hidden; }
   body.loading {
     background: #fff; }
+    body.loading .spinner {
+      display: inherit;
+      visibility: inherit;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      z-index: 10000;
+      background: #fff;
+      overflow: hidden; }
+      body.loading .spinner *[class^="sk-"] {
+        margin-top: 25%; }
 
 a {
   color: #212226;
