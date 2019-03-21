@@ -6,7 +6,7 @@
 ### ------------- ###
 */
 
-@import "./node_modules/spinkit/scss/spinners/1-rotating-plane";
+@import "./node_modules/spinkit/scss/spinners/9-cube-grid";
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
@@ -277,6 +277,9 @@ body {
       *[class^="sk-"] {
         margin-top: 25%;
         
+        * {
+          margin-top: 0;
+        }
       }
     }
   }
