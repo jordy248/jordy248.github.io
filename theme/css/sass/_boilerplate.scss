@@ -6,7 +6,7 @@
 ### ------------- ###
 */
 
-@import "./node_modules/spinkit/scss/spinners/9-cube-grid";
+@import "./node_modules/spinkit/scss/spinners/4-wandering-cubes";
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
@@ -262,7 +262,7 @@ body {
   }
 
   &.loading {
-    background: #fff;
+    background: $color-white;
     
     .spinner {
       display: inherit;
@@ -271,7 +271,7 @@ body {
       width: 100vw;
       height: 100vh;
       z-index: 10000;
-      background: #fff;
+      background: $color-white;
       overflow: hidden;
 
       *[class^="sk-"] {
@@ -534,12 +534,12 @@ kbd {
   padding: 1px 8px;
   border: #e5e4e1 1px solid;
   color: #45484d;
-  text-shadow: #fff 0 1px 0;
+  text-shadow: $color-white 0 1px 0;
   font-size: 0.9em;
   font-weight: bold;
   background: #faf9f7;
   border-radius: 4px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 $color-white inset
 }
 
 table {
@@ -931,7 +931,7 @@ html.menu-active,
   left: 0;
   right: 0;
   bottom: 0;
-  border-bottom: 2px solid #f26a3d;
+  border-bottom: 2px solid $color-red;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
   -ms-transform: scaleX(0);
@@ -1127,7 +1127,7 @@ html.menu-active,
 
 .has-cover {
   .blog-name {
-    color: #fff;
+    color: $color-white;
   }
 }
 
@@ -1150,7 +1150,7 @@ html.menu-active,
 .has-cover {
 
   .blog-description {
-    color: #fff;
+    color: $color-white;
   }
 }
 
@@ -1231,7 +1231,6 @@ html.menu-active,
   }
 }
 
-
 .nav-button {
   position: fixed;
   top: 0;
@@ -1251,25 +1250,25 @@ html.menu-active,
     height: auto;
     margin-bottom: 1em;
     padding: 0.5em 1.25em;
-    border: 1px solid #c2c7cc;
+    border: 1px solid $color-teal;
     font-family: 'Fira Sans', sans-serif;
     font-size: 1em;
     line-height: 1.666em;
     text-shadow: none;
-    color: #8a9199;
+    color: $color-teal;
     cursor: pointer;
-    background: #fff;
+    background: $color-white;
     transition: color, border-color ease 0.3s;
     border-radius: 2em;
 
     &:hover {
-      color: #f26a3d;
-      border-color: #f26a3d;
+      color: $color-red;
+      border-color: $color-red;
     }
 
     &:focus {
-      color: #f26a3d;
-      border-color: #f26a3d;      
+      color: $color-red;
+      border-color: $color-red;      
     }
 
     i {
@@ -1329,7 +1328,7 @@ html.menu-active,
     top: 0;
     right: 0.5em;
     margin: 1em;
-    border: 1px solid #c2c7cc;
+    border: 1px solid $color-teal;
     color: transparent;
     cursor: pointer;
     transition: all ease 0.3s;
@@ -1339,20 +1338,20 @@ html.menu-active,
     
     &:hover {
       transform: rotate(180deg);
-      border-color: #f26a3d;
+      border-color: $color-red;
 
       &:after {
-        background: #f26a3d;
+        background: $color-red;
       }
 
       &:before {
-        background: #f26a3d;
+        background: $color-red;
       }
     }
 
     &:focus {
       transform: rotate(180deg);
-      border-color: #f26a3d;
+      border-color: $color-red;
     }
 
     &:after {
@@ -1363,7 +1362,7 @@ html.menu-active,
       top: 50%;
       margin-left: -0.5em;
       content: '';
-      background: #8a9199;
+      background: $color-teal;
       transition: all ease 0.3s;
 
       transform: rotate(45deg);
@@ -1377,7 +1376,7 @@ html.menu-active,
       top: 50%;
       margin-left: -0.5em;
       content: '';
-      background: #8a9199;
+      background: $color-teal;
       transition: all ease 0.3s;
 
       transform: rotate(-45deg);
@@ -1437,7 +1436,7 @@ html.menu-active,
         height: 100%;
         left: 0;
         top: 0;
-        background: #f26a3d;
+        background: $color-red;
       }
     }
 
@@ -1527,7 +1526,7 @@ html.menu-active,
 }
 
 #blog-author.has-cover .post-author-avatar img {
-  border: 0.125em solid #fff
+  border: 0.125em solid $color-white
 }
 
 #blog-author .post-author-name {
@@ -1541,7 +1540,7 @@ html.menu-active,
   font-weight: 500;
   letter-spacing: 0.025em;
   line-height: 1.333em;
-  color: #fff
+  color: $color-white
 }
 
 #blog-author.has-cover .post-author-about {
@@ -1587,12 +1586,12 @@ html.menu-active,
   margin: -20px 0px;
   padding: 0.666em 1em;
   z-index: 100;
-  border: 1px solid #c2c7cc;
+  border: 1px solid $color-teal;
   font-size: 1em;
   line-height: 1.5em;
   text-align: center;
   text-decoration: none;
-  color: #8a9199;
+  color: $color-teal;
   transition: all ease 0.3s;
   border-radius: 2em
 }
@@ -1617,8 +1616,8 @@ html.menu-active,
 
 .pagination a:hover,
 .pagination a:focus {
-  color: #f26a3d;
-  border-color: #f26a3d
+  color: $color-red;
+  border-color: $color-red
 }
 
 .pagination .pagination-label {
@@ -1822,31 +1821,31 @@ html.menu-active,
     height: auto;
     margin-bottom: 1em;
     padding: 0.5em 1.25em;
-    border: 1px solid #c2c7cc;
+    border: 1px solid $color-teal;
     font-family: 'Fira Sans', sans-serif;
     font-size: 1em;
     line-height: 1.666em;
     text-shadow: none;
-    color: #8a9199;
+    color: $color-teal;
     cursor: pointer;
-    background: #fff;
+    background: $color-white;
     transition: color, border-color ease 0.3s;
     border-radius: 2em
   }
   .nav-button a:hover,
   .nav-button a:focus {
-    color: #f26a3d;
-    border-color: #f26a3d
+    color: $color-red;
+    border-color: $color-red
   }
   .cover-active .nav-button a {
-    color: #fff;
+    color: $color-white;
     border-color: rgba(255, 255, 255, 0.5);
     background: transparent
   }
   .cover-active .nav-button a:hover,
   .cover-active .nav-button a:focus {
-    color: #fff;
-    border-color: #fff
+    color: $color-white;
+    border-color: $color-white
   }
   .nav-button a i {
     display: inline-block;
@@ -1885,7 +1884,7 @@ html.menu-active,
     top: 0;
     right: 0.5em;
     margin: 1em;
-    border: 1px solid #c2c7cc;
+    border: 1px solid $color-teal;
     color: transparent;
     cursor: pointer;
     transition: all ease 0.3s;
@@ -1896,7 +1895,7 @@ html.menu-active,
   #menu .close-button:hover,
   #menu .close-button:focus {
     transform: rotate(180deg);
-    border-color: #f26a3d
+    border-color: $color-red
   }
   #menu .close-button:after,
   #menu .close-button:before {
@@ -1907,14 +1906,14 @@ html.menu-active,
     top: 50%;
     margin-left: -0.5em;
     content: '';
-    background: #8a9199;
+    background: $color-teal;
     transition: all ease 0.3s
   }
   #menu .close-button:hover:after,
   #menu .close-button:hover:before,
   #menu .close-button:focus:after,
   #menu .close-button:focus:before {
-    background: #f26a3d
+    background: $color-red
   }
   #menu .close-button:after {
     transform: rotate(45deg)
@@ -1967,7 +1966,7 @@ html.menu-active,
     height: 100%;
     left: 0;
     top: 0;
-    background: #f26a3d
+    background: $color-red
   }
   #menu li a {
     display: block;
