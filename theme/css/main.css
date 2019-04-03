@@ -1847,7 +1847,7 @@ html.menu-active,
       left: 0;
       right: 0;
       bottom: 0;
-      border-bottom: 2px solid #484A47;
+      border-bottom: 2px solid #000145;
       -webkit-transform: scaleX(0);
       -moz-transform: scaleX(0);
       -ms-transform: scaleX(0);
@@ -1908,7 +1908,7 @@ html.menu-active,
       display: inline-block; }
     #footer .credits a {
       flex: 1;
-      color: #484A47; }
+      color: #000145; }
     #footer .credits .icon {
       margin: 0px 5px; }
       #footer .credits .icon a {
@@ -1917,7 +1917,7 @@ html.menu-active,
         color: #D9DBDE; }
 
 #credits-locale a .icon {
-  color: #484A47 !important; }
+  color: #000145 !important; }
 
 #credits-social .icon {
   transition: 333ms all ease;

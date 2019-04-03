@@ -20,7 +20,7 @@
     }
 
     .an-link {
-        @include mxn-link-animation($color-lightgray, $color-lightgray, $color-darkgray);
+        @include mxn-link-animation($color-lightgray, $color-lightgray, $color-navy);
     }
 
     .credits {
@@ -38,7 +38,7 @@
         
         a {
             flex: 1;
-            color: $color-darkgray;
+            color: $color-navy;
         }
 
         .icon {
@@ -60,7 +60,7 @@
 #credits-locale {
     a {
         .icon {
-            color: $color-darkgray !important;
+            color: $color-navy !important;
         }
     }
 }
