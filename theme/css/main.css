@@ -1237,8 +1237,8 @@ html.menu-active,
   transition: all ease-out 0.25s; }
   #menu .close-button {
     position: absolute;
-    width: 2em;
-    height: 2em;
+    width: 50px;
+    height: 50px;
     top: 0;
     right: 0.5em;
     margin: 1em;
