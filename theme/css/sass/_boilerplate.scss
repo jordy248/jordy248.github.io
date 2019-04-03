@@ -1,12 +1,106 @@
 // _boilerplate.scss
 
-  /*
+/* 
+### ---------- ###
+### BEGIN TEMP ###
+### ---------- ###
+*/
+
+.center_abs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.nav-home {
+  @extend .center_abs;
+  position: relative !important;
+  margin: 0px 0px !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $color-darkgray;
+  overflow: hidden;
+  transform: translate3d(0), rotate(0deg);
+  transition: transform 350ms ease-out,
+              background 350ms ease-out;
+}
+.nav-home-link {
+  display: block;
+  height: 100%;
+}
+.nav-home-link-icon {
+  @extend .center_abs;
+  width: 25px;
+  height: 16px;
+  background: #FFFFFF;
+  top: 10px;
+  transform: translate3d(0);
+  transition: width 350ms ease-out, 
+              top 350ms ease-out;
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    bottom: 100%;
+  }
+  &:before {
+    left: 0;
+    border-style: solid;
+    border-width: 0 12px 8px 12px;
+    border-color: transparent transparent #FFF transparent;
+    transform: translate3d(0);
+    transition: left 350ms ease-out, 
+                border-width 350ms ease-out;
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: $color-darkgray;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 1;
+    transition: opacity 350ms ease-out;
+  }
+}
+
+.nav-home:hover {
+  transform: rotate(-90deg);
+  background: $color-rust;
+  .nav-home-link-icon {
+    width: 9px;
+    top: 8px;
+    &:before {
+      left: -8px;
+      border-width: 0 12px 10px 12px;
+    }
+    &:after {
+      opacity: 0;
+    }
+  }
+}
+
+/*
+### -------- ###
+### END TEMP ###
+### -------- ###
+*/
+
+/*
 ### ------------- ###
 ### BEGIN IMPORTS ###
 ### ------------- ###
 */
 
-@import "./node_modules/spinkit/scss/spinners/9-cube-grid";
+@import "./node_modules/spinkit/scss/spinners/4-wandering-cubes";
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
@@ -276,9 +370,14 @@ body {
 
       *[class^="sk-"] {
         margin-top: 25%;
+        background
         
         * {
           margin-top: 0;
+        }
+
+        .sk-cube {
+          background-color: $color-rust;
         }
       }
     }

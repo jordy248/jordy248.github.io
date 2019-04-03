@@ -11,8 +11,8 @@
     -webkit-text-size-adjust: $val;
 }
 
-@mixin mxn-gradient-animation($angle, $color1, $color2, $color3) {
-        background: linear-gradient($angle, $color1, $color2, $color3);
+@mixin mxn-gradient-animation($angle, $color1, $color2, $color3, $color4) {
+        background: linear-gradient($angle, $color1, $color2, $color3, $color4);
         background-size: 600% 600%;
         -webkit-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
         -moz-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;

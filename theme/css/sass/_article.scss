@@ -568,7 +568,7 @@
     }
 
     &.an-grad {
-        @include mxn-gradient-animation(270deg, $color-rust, $color-teal, $color-red);
+        @include mxn-gradient-animation(270deg, $color-rust, $color-teal, $color-red, $color-navy);
         background-size: 1000% 1000%;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
