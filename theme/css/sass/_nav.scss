@@ -236,12 +236,18 @@
                 top: 0;
                 background: $color-red;
             }
+
+            span {
+                color: $color-red;
+                font-weight: 500;
+            }
         }
 
-        a {
+        a,
+        span {
             display: block;
             padding: 1.25em 1.5em;
-            color: #212226;
+            color: $color-darkgray;
             white-space: nowrap;
             text-overflow: ellipsis;
             font-weight: 400;
@@ -261,6 +267,11 @@
                 &.active {
                     a {
                         color: #000;
+                        font-weight: 500;
+                    }
+
+                    span {
+                        color: $color-lightgray;
                         font-weight: 500;
                     }
                 }
@@ -595,13 +606,19 @@
                     top: 0;
                     background: $color-red;
                 }
+
+                span {
+                    color: $color-red;
+                    font-weight: 500;
+                }
             }
         }
     
-        a {
+        a,
+        span {
             display: block;
             padding: 1.25em 1.5em;
-            color: #212226;
+            color: $color-darkgray;
             white-space: nowrap;
             text-overflow: ellipsis;
             font-weight: 400;
@@ -621,6 +638,11 @@
                 &.active {
                     a {
                         color: #000;
+                        font-weight: 500;
+                    }
+
+                    span {
+                        color: $color-lightgray;
                         font-weight: 500;
                     }
                 }

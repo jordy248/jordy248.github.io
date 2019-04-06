@@ -1531,23 +1531,35 @@ html.menu-active,
       left: 0;
       top: 0;
       background: #E88873; }
-    #menu li a {
+    #menu li.active span {
+      color: #E88873;
+      font-weight: 500; }
+    #menu li a,
+    #menu li span {
       display: block;
       padding: 1.25em 1.5em;
-      color: #212226;
+      color: #484A47;
       white-space: nowrap;
       text-overflow: ellipsis;
       font-weight: 400; }
-      #menu li a:hover, #menu li a:focus {
+      #menu li a:hover, #menu li a:focus,
+      #menu li span:hover,
+      #menu li span:focus {
         color: #000;
         background: rgba(0, 0, 0, 0.05); }
-      #menu li a i {
+      #menu li a i,
+      #menu li span i {
         position: relative;
         top: -0.25em;
         font-size: 0.5em;
         color: inherit; }
-        #menu li a i.active a {
+        #menu li a i.active a,
+        #menu li span i.active a {
           color: #000;
+          font-weight: 500; }
+        #menu li a i.active span,
+        #menu li span i.active span {
+          color: #D9DBDE;
           font-weight: 500; }
 
 .center_abs, .nav-home, .nav-home-link-icon {
@@ -1782,23 +1794,35 @@ html.menu-active,
         left: 0;
         top: 0;
         background: #E88873; }
-    #menu a {
+      #menu li.active span {
+        color: #E88873;
+        font-weight: 500; }
+    #menu a,
+    #menu span {
       display: block;
       padding: 1.25em 1.5em;
-      color: #212226;
+      color: #484A47;
       white-space: nowrap;
       text-overflow: ellipsis;
       font-weight: 400; }
-      #menu a:hover, #menu a:focus {
+      #menu a:hover, #menu a:focus,
+      #menu span:hover,
+      #menu span:focus {
         color: #000;
         background: rgba(0, 0, 0, 0.05); }
-      #menu a i {
+      #menu a i,
+      #menu span i {
         position: relative;
         top: -0.25em;
         font-size: 0.5em;
         color: inherit; }
-        #menu a i.active a {
+        #menu a i.active a,
+        #menu span i.active a {
           color: #000;
+          font-weight: 500; }
+        #menu a i.active span,
+        #menu span i.active span {
+          color: #D9DBDE;
           font-weight: 500; } }
 
 /*
