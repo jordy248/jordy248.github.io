@@ -1453,7 +1453,7 @@ html.menu-active,
     right: 0.5em;
     margin: 1em;
     border: 1px solid #5C6D70;
-    color: transparent;
+    color: transparent !important;
     cursor: pointer;
     transition: all ease 0.3s;
     border-radius: 2em;
@@ -1717,7 +1717,7 @@ html.menu-active,
       right: 0.5em;
       margin: 1em;
       border: 1px solid #5C6D70;
-      color: transparent;
+      color: transparent !important;
       cursor: pointer;
       transition: all ease 0.3s;
       border-radius: 2em;

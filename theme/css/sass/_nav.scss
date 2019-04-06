@@ -127,7 +127,7 @@
         right: 0.5em;
         margin: 1em;
         border: 1px solid $color-teal;
-        color: transparent;
+        color: transparent !important;
         cursor: pointer;
         transition: all ease 0.3s;
         border-radius: 2em;
@@ -500,7 +500,7 @@
             right: 0.5em;
             margin: 1em;
             border: 1px solid $color-teal;
-            color: transparent;
+            color: transparent !important;
             cursor: pointer;
             transition: all ease 0.3s;
             border-radius: 2em;
