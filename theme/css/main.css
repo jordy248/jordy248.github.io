@@ -2713,13 +2713,25 @@ html.menu-active,
     background: #000145;
     color: #fff;
     border-radius: 2px;
+    overflow: hidden;
     transition: 0.333s ease all; }
     .toolbox ul li:before {
       content: ''; }
     .toolbox ul li:hover {
       cursor: pointer;
-      background: #484A47;
       transform: translateY(-3px); }
+      .toolbox ul li:hover:after {
+        top: 0; }
+    .toolbox ul li:after {
+      content: ' ';
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: #815350;
+      top: 100%;
+      left: 0;
+      transition: inherit; }
 
 /*
 ### --------- ###
