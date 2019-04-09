@@ -9,7 +9,7 @@
 #wrapper {
     position: relative;
     padding-right: 0;
-    transition: all ease-out 0.25s;
+    transition: 0.333s all ease-out;
 
     .hidden-close {
         display: none;
@@ -117,7 +117,7 @@
     font-family: 'Fira Sans', sans-serif;
     box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.1);
     transform: translate3d(100vw, 0, 0);
-    transition: all ease-out 0.25s;
+    transition: 0.333s all ease-out;
 
     .close-button {
         position: absolute;
@@ -392,7 +392,7 @@
     #wrapper {
         position: relative;
         padding-right: 0;
-        transition: all ease-out 0.25s;
+        transition: 0.333s all ease-out;
 
         .hidden-close {
             display: none;
@@ -407,7 +407,8 @@
 
     .menu-active {
         #wrapper {
-            padding-right: 24em;
+            right: 16em;
+            padding-right: 0em;
 
             .hidden-close {
                 display: block;
@@ -501,7 +502,7 @@
         font-family: 'Fira Sans', sans-serif;
         box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.1);
         transform: translate3d(24em, 0, 0);
-        transition: all ease-out 0.25s;
+        transition: 0.333s all ease-out;
 
         .close-button {
             position: absolute;

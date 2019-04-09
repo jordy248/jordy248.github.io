@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://jordynelson.io/</loc>
-<lastmod>2019-04-08T01:47:09-00:00</lastmod>
+<lastmod>2019-04-08T23:58:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/archives.html</loc>
-<lastmod>2019-04-08T01:47:09-00:00</lastmod>
+<lastmod>2019-04-08T23:58:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/tags.html</loc>
-<lastmod>2019-04-08T01:47:09-00:00</lastmod>
+<lastmod>2019-04-08T23:58:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://jordynelson.io/pages/about/</loc>
 <lastmod>2019-03-12T08:21:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://jordynelson.io/2019/04/riddler-2019-03-29.html</loc>
+<lastmod>2019-04-08T08:22:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>

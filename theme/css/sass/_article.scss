@@ -171,13 +171,12 @@
     text-align: left;
 
     a {
-        border-bottom: 1px solid $color-rust;
+        color: inherit;
+        /*@include mxn-link-animation(inherit, inherit, $color-red);*/
         
-        &:hover {
-            color: $color-rust;
-        }
-
+        &:hover,
         &:focus {
+            text-decoration: none;
             color: $color-rust;
         }
     }
