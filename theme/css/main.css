@@ -1658,7 +1658,7 @@ html.menu-active,
       top: 0;
       z-index: 350; }
   .menu-active #wrapper {
-    right: 16em;
+    right: 0em;
     padding-right: 0em; }
     .menu-active #wrapper .hidden-close {
       display: block; }
@@ -2326,9 +2326,9 @@ html.menu-active,
 .post-content {
   text-align: left; }
   .post-content a {
-    color: inherit;
+    color: #E88873;
     position: relative;
-    color: inherit;
+    color: #E88873;
     padding-bottom: 0.125em; }
     .post-content a:before {
       content: '';
@@ -2336,7 +2336,7 @@ html.menu-active,
       left: 0;
       right: 0;
       bottom: 0;
-      border-bottom: 2px solid inherit;
+      border-bottom: 2px solid #E88873;
       -webkit-transform: scaleX(1);
       -moz-transform: scaleX(1);
       -ms-transform: scaleX(1);
@@ -2362,7 +2362,7 @@ html.menu-active,
       left: 0;
       right: 0;
       bottom: 0;
-      border-bottom: 2px solid #E88873;
+      border-bottom: 2px solid #484A47;
       -webkit-transform: scaleX(0);
       -moz-transform: scaleX(0);
       -ms-transform: scaleX(0);

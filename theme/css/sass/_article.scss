@@ -171,8 +171,8 @@
     text-align: left;
 
     a {
-        color: inherit;
-        @include mxn-link-animation(inherit, inherit, $color-red);
+        color: $color-red;
+        @include mxn-link-animation($color-red, $color-red, $color-darkgray);
         
         &:hover,
         &:focus {
