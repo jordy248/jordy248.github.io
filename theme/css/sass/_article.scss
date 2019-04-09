@@ -172,7 +172,7 @@
 
     a {
         color: inherit;
-        /*@include mxn-link-animation(inherit, inherit, $color-red);*/
+        @include mxn-link-animation(inherit, inherit, $color-red);
         
         &:hover,
         &:focus {
