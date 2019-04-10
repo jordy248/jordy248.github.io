@@ -171,8 +171,9 @@
     text-align: left;
 
     a {
-        color: $color-red;
-        @include mxn-link-animation($color-red, $color-red, $color-darkgray);
+        color: inherit;
+        text-decoration: none;
+        @include mxn-link-animation(inherit, $color-red, $color-darkgray);
         
         &:hover,
         &:focus {
@@ -191,6 +192,10 @@
         max-width: none;
         width: 110%;
         margin-left: -5%;
+    }
+
+    .highlight {
+        font-size: 62.5%;
     }
 }
 

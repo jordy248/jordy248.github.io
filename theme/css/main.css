@@ -2326,9 +2326,10 @@ html.menu-active,
 .post-content {
   text-align: left; }
   .post-content a {
-    color: #E88873;
+    color: inherit;
+    text-decoration: none;
     position: relative;
-    color: #E88873;
+    color: inherit;
     padding-bottom: 0.125em; }
     .post-content a:before {
       content: '';
@@ -2422,6 +2423,8 @@ html.menu-active,
     max-width: none;
     width: 110%;
     margin-left: -5%; }
+  .post-content .highlight {
+    font-size: 62.5%; }
 
 .post-info {
   margin-top: 6em;

@@ -255,7 +255,7 @@
         <span class="c1"># randomly choose a card from the wallet to use</span>
         <span class="n">card_chosen_idx</span> <span class="o">&lt;-</span> <span class="nf">choose_card</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
 
-        <span class="c1"># break if the chosen card is empty</span>
+        <span class="c1"># break case = chosen card is empty</span>
         <span class="nf">if</span><span class="p">(</span><span class="n">wallet[[card_chosen_idx]]</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nf">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
         <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
