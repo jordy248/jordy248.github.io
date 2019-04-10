@@ -356,17 +356,17 @@
 .nav-home:hover {
     transform: rotate(-90deg);
     background: transparent;
-    border: 1px solid $color-rust;
+    border: 1px solid $color-red;
 
     .nav-home-link-icon {
         width: 9px;
         top: 8px;
-        background: $color-rust;
+        background: $color-red;
 
         &:before {
             left: -8px;
             border-width: 0 12px 10px 12px;
-            border-color: transparent transparent $color-rust transparent;
+            border-color: transparent transparent $color-red transparent;
         }
 
         &:after {
@@ -522,11 +522,11 @@
             &:hover,
             &:focus {
                 transform: rotate(180deg);
-                border-color: $color-rust;
+                border-color: $color-red;
 
                 &:after,
                 &:before {
-                    background: $color-rust;
+                    background: $color-red;
                 }
             }
 

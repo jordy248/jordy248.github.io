@@ -450,10 +450,6 @@
 .post-nav-next {
     float: left;
 
-    .post-nav-teaser {
-        padding-right: 1em;
-    }
-
     i {
         left: 0;
         margin-left: -1.75em;        
@@ -463,10 +459,6 @@
 .post-nav-prev {
     float: right;
 
-    .post-nav-teaser {
-        padding-left: 1em;
-    }
-
     i {
         right: 0;
         margin-right: -1.75em;
@@ -474,8 +466,16 @@
 }
 
 .post-nav-teaser {
-    padding: 1.5em 0;
+    padding: 1.5em 1em;
     min-height: 6em;
+
+    .post-nav-text {
+        display: block;
+        margin: auto auto;
+        padding: 0.5em 0.25em;
+        background: rgba(255, 255, 255, 0.625);
+        color: inherit;
+    }
 }
 
 .post-nav-title {
