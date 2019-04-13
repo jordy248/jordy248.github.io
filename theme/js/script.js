@@ -5973,14 +5973,5 @@
             orientationchange: function () {
                 d()
             }
-        }), e(), f(), "undefined" == typeof disqus ? a(".post-comments").css({
-            display: "none"
-        }) : a("#show-disqus").on("click", function () {
-            a.ajax({
-                type: "GET",
-                url: "//" + disqus + ".disqus.com/embed.js",
-                dataType: "script",
-                cache: !0
-            }), a(this).parent().addClass("activated")
         })
     });
