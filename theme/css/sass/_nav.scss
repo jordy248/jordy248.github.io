@@ -196,7 +196,7 @@
         padding: 1.666em 2em;
         margin: 0;
         opacity: 0.5;
-        font-size: 0.75em;
+        font-size: 1em;
         line-height: 2em;
     }
 
@@ -295,64 +295,74 @@
     @extend .center_abs;
     position: relative !important;
     margin: 0px 0px !important;
-    width: 50px;
-    height: 50px;
+    width: 3em;
+    height: 3em;
     border: 1px solid $color-teal;
     border-radius: 50%;
     background: $color-lightgray;
     overflow: hidden;
     transform: translate3d(0), rotate(0deg);
     transition: transform 330ms ease-out, background 330ms ease-out;
-}
 
-.nav-home-link {
-    display: block;
-    height: 100%;
-}
-
-.nav-home-link-icon {
-    @extend .center_abs;
-    width: 25px;
-    height: 16px;
-    background: $color-darkgray;
-    top: 10px;
-    transform: translate3d(0);
-    transition: width 330ms ease-out,
-        top 330ms ease-out;
-
-    &:before,
-    &:after {
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 0;
-        bottom: 100%;
+    &:hover {
+        transform: rotate(-90deg);
+        background: transparent;
+        border: 1px solid $color-red;        
     }
 
-    &:before {
-        left: 0;
-        border-style: solid;
-        border-width: 0 12px 8px 12px;
-        border-color: transparent transparent $color-darkgray transparent;
-        transform: translate3d(0);
-        transition: left 330ms ease-out,
-            border-width 330ms ease-out;
-    }
+    .nav-home-link {
+        display: block;
+        height: 100%;
 
-    &:after {
-        position: absolute;
-        content: '';
-        width: 10px;
-        height: 10px;
-        background: $color-lightgray;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        opacity: 1;
-        transition: opacity 330ms ease-out;
+        .nav-home-link-icon {
+            @extend .center_abs;
+            width: 25px;
+            height: 16px;
+            background: $color-darkgray;
+            top: 10px;
+            transform: translate3d(0);
+            transition: width 330ms ease-out,
+                top 330ms ease-out;
+        
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                width: 0;
+                height: 0;
+                bottom: 100%;
+            }
+        
+            &:before {
+                left: 0;
+                border-style: solid;
+                border-width: 0 12px 8px 12px;
+                border-color: transparent transparent $color-darkgray transparent;
+                transform: translate3d(0);
+                transition: left 330ms ease-out,
+                    border-width 330ms ease-out;
+            }
+        
+            &:after {
+                position: absolute;
+                content: '';
+                width: 10px;
+                height: 10px;
+                background: $color-lightgray;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                opacity: 1;
+                transition: opacity 330ms ease-out;
+            }
+        }
     }
 }
+
+
+
+
 
 .nav-home:hover {
     transform: rotate(-90deg);
