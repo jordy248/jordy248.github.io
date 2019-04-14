@@ -1605,7 +1605,7 @@ html.menu-active,
       .nav-home .nav-home-link .nav-home-link-icon:before {
         left: 0;
         border-style: solid;
-        border-width: 0 12px 8px 12px;
+        border-width: 0 13px 9px 12px;
         border-color: transparent transparent #484A47 transparent;
         transform: translate3d(0);
         transition: left 330ms ease-out, border-width 330ms ease-out; }
