@@ -368,6 +368,11 @@
         padding: 1em;
         background: $color-lightgray;
         border: 1px solid $color-lightgray;
+
+        #disqus_thread {
+            display: inherit;
+            visibility: visible;
+        }
     }
 
     #disqus_thread {
@@ -398,15 +403,11 @@
         color: $color-rust;
         border-color: $color-rust;
     }
-
-    #disqus_thread {
-        display: inherit;
-        visibility: visible;
-    }
 }
 
 .activated .post-comments-activate {
     display: none;
+    visibility: hidden;
 }
 
 .post-nav {

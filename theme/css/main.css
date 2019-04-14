@@ -2558,6 +2558,9 @@ html.menu-active,
     padding: 1em;
     background: #D9DBDE;
     border: 1px solid #D9DBDE; }
+    .post-comments.activated #disqus_thread {
+      display: inherit;
+      visibility: visible; }
   .post-comments #disqus_thread {
     display: none;
     visibility: hidden; }
@@ -2581,12 +2584,10 @@ html.menu-active,
   .post-comments-activate:focus {
     color: #815350;
     border-color: #815350; }
-  .post-comments-activate #disqus_thread {
-    display: inherit;
-    visibility: visible; }
 
 .activated .post-comments-activate {
-  display: none; }
+  display: none;
+  visibility: hidden; }
 
 .post-nav {
   position: relative;
