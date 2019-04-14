@@ -1460,16 +1460,14 @@ html.menu-active,
     border-radius: 2em;
     box-sizing: border-box;
     z-index: 500; }
-    #menu .close-button:hover {
-      transform: rotate(180deg);
+    #menu .close-button:hover, #menu .close-button:focus {
       border-color: #E88873; }
-      #menu .close-button:hover:after {
-        background: #E88873; }
-      #menu .close-button:hover:before {
-        background: #E88873; }
-    #menu .close-button:focus {
-      transform: rotate(180deg);
-      border-color: #E88873; }
+      #menu .close-button:hover:after, #menu .close-button:focus:after {
+        background: #E88873;
+        transform: rotate(180deg); }
+      #menu .close-button:hover:before, #menu .close-button:focus:before {
+        background: #E88873;
+        transform: rotate(180deg); }
     #menu .close-button:after {
       position: absolute;
       width: 1em;
@@ -1740,9 +1738,9 @@ html.menu-active,
       box-sizing: border-box;
       z-index: 500; }
       #menu .close-button:hover, #menu .close-button:focus {
-        transform: rotate(180deg);
         border-color: #E88873; }
         #menu .close-button:hover:after, #menu .close-button:hover:before, #menu .close-button:focus:after, #menu .close-button:focus:before {
+          transform: rotate(180deg);
           background: #E88873; }
       #menu .close-button:after, #menu .close-button:before {
         position: absolute;

@@ -135,22 +135,19 @@
         box-sizing: border-box;
         z-index: 500;
 
-        &:hover {
-            transform: rotate(180deg);
+        &:hover,
+        &:focus {
             border-color: $color-red;
 
             &:after {
                 background: $color-red;
+                transform: rotate(180deg);
             }
 
             &:before {
                 background: $color-red;
+                transform: rotate(180deg);
             }
-        }
-
-        &:focus {
-            transform: rotate(180deg);
-            border-color: $color-red;
         }
 
         &:after {
@@ -360,10 +357,6 @@
     }
 }
 
-
-
-
-
 .nav-home:hover {
     transform: rotate(-90deg);
     background: transparent;
@@ -532,11 +525,11 @@
 
             &:hover,
             &:focus {
-                transform: rotate(180deg);
                 border-color: $color-red;
 
                 &:after,
                 &:before {
+                    transform: rotate(180deg);
                     background: $color-red;
                 }
             }
