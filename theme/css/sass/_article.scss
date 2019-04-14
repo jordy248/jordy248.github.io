@@ -369,6 +369,11 @@
         background: $color-lightgray;
         border: 1px solid $color-lightgray;
     }
+
+    #disqus_thread {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 .post-comments-activate {
@@ -392,6 +397,11 @@
     &:focus {
         color: $color-rust;
         border-color: $color-rust;
+    }
+
+    #disqus_thread {
+        display: inherit;
+        visibility: visible;
     }
 }
 
