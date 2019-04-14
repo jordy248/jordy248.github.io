@@ -6,10 +6,21 @@
 ### ----------- ###
 */
 
-.toolbox {
-    width: 100%; 
+.toolbox,
+.work-history,
+.education {
+    width: 100%;
     text-align: center;
     vertical-align: top;
+
+    h2 {
+        font-weight: 700;
+        margin: 2em 0 -1em 0;
+    }
+
+    h3 {
+        margin: 2em 0 0 0;
+    }
 
     h2,
     h3 {
@@ -27,7 +38,7 @@
     }
 
     ul {
-        
+
         li {
             position: relative;
             margin: 8px 0;
@@ -44,7 +55,6 @@
 
             &:hover {
                 color: $color-navy;
-                cursor: pointer;                
                 transform: translateY(-3px);
 
                 &:after {
@@ -64,11 +74,82 @@
                 left: 0;
                 transition: inherit;
             }
-            
+
         }
     }
 
-    
+
+    .experience {
+        display: block;
+        position: relative;
+        text-align: center;
+        background: $color-lightgray;
+        padding: 0 0.5em 0.5em 0.5em;
+        margin-top: 2.5em;
+        border: 1px solid $color-darkgray;
+        border-radius: 2px;
+
+        .experience-location {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            color: $color-navy;
+            transition: 0.333s ease all;
+
+            &:after {
+                content: attr(data-alt);
+                color: $color-red;
+                position: absolute;
+                display: block;
+                width: 100%;
+                text-align: center;
+                top: 0;
+                transform: rotateX(90deg);
+                transition: inherit;
+            }
+        }
+
+        .experience-position {
+            display: block;
+            color: $color-darkgray;
+
+            &:before {
+                content: '+ ';
+                font-weight: 700;
+                color: $color-red;
+            }
+
+            .experience-time {
+                display: block;
+                font-size: 0.75em;
+                line-height: 0.75em;
+                color: $color-darkgray;
+                margin: 0 0 0.75em 0;
+            }
+
+            .experience-more {
+                transform: rotateX(90deg);
+
+                transition: 0.333s ease all;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            .experience-location {
+
+                &:after {
+                    z-index: 1;
+                    transform: rotateX(0deg);
+                }
+            }
+
+            .experience-more {
+                transform: rotateX(0deg);
+            }
+        }
+    }
 
 }
 

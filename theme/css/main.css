@@ -343,7 +343,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
   text-rendering: optimizeLegibility;
   color: #000; }
 
@@ -393,7 +393,7 @@ ol > li:before {
   position: absolute;
   width: 1.5em;
   margin-left: -2em;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
   font-size: 1em;
   font-weight: 500;
   line-height: 1.5em;
@@ -566,7 +566,7 @@ table td {
   border: 1px solid #e5e4e1; }
 
 table th {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
   font-weight: 500;
   font-size: 0.75em;
   line-height: 1.25em;
@@ -1140,7 +1140,7 @@ html.menu-active,
   height: 2em;
   margin: 0;
   padding: 2em 0;
-  font-family: 'Fira Sans', sans-serif; }
+  font-family: "Raleway", Verdana, Arial, Helvetica, sans-serif; }
 
 .pagination:after {
   position: absolute;
@@ -2796,20 +2796,41 @@ html.menu-active,
 ### begin about ###
 ### ----------- ###
 */
-.toolbox {
+.toolbox,
+.work-history,
+.education {
   width: 100%;
   text-align: center;
   vertical-align: top; }
   .toolbox h2,
-  .toolbox h3 {
+  .work-history h2,
+  .education h2 {
+    font-weight: 700;
+    margin: 2em 0 -1em 0; }
+  .toolbox h3,
+  .work-history h3,
+  .education h3 {
+    margin: 2em 0 0 0; }
+  .toolbox h2,
+  .toolbox h3,
+  .work-history h2,
+  .work-history h3,
+  .education h2,
+  .education h3 {
     text-align: inherit; }
-  .toolbox div {
+  .toolbox div,
+  .work-history div,
+  .education div {
     vertical-align: inherit; }
-  .toolbox div[class^="toolbox-"] {
+  .toolbox div[class^="toolbox-"],
+  .work-history div[class^="toolbox-"],
+  .education div[class^="toolbox-"] {
     display: inline-block;
     width: 40%;
     margin: 0 2.5%; }
-  .toolbox ul li {
+  .toolbox ul li,
+  .work-history ul li,
+  .education ul li {
     position: relative;
     margin: 8px 0;
     background: #000145;
@@ -2817,15 +2838,22 @@ html.menu-active,
     border-radius: 2px;
     overflow: hidden;
     transition: 0.333s ease all; }
-    .toolbox ul li:before {
+    .toolbox ul li:before,
+    .work-history ul li:before,
+    .education ul li:before {
       content: ''; }
-    .toolbox ul li:hover {
+    .toolbox ul li:hover,
+    .work-history ul li:hover,
+    .education ul li:hover {
       color: #000145;
-      cursor: pointer;
       transform: translateY(-3px); }
-      .toolbox ul li:hover:after {
+      .toolbox ul li:hover:after,
+      .work-history ul li:hover:after,
+      .education ul li:hover:after {
         top: 0; }
-    .toolbox ul li:after {
+    .toolbox ul li:after,
+    .work-history ul li:after,
+    .education ul li:after {
       content: ' ';
       position: absolute;
       z-index: -1;
@@ -2835,6 +2863,74 @@ html.menu-active,
       top: 100%;
       left: 0;
       transition: inherit; }
+  .toolbox .experience,
+  .work-history .experience,
+  .education .experience {
+    display: block;
+    position: relative;
+    text-align: center;
+    background: #D9DBDE;
+    padding: 0 0.5em 0.5em 0.5em;
+    margin-top: 2.5em;
+    border: 1px solid #484A47;
+    border-radius: 2px; }
+    .toolbox .experience .experience-location,
+    .work-history .experience .experience-location,
+    .education .experience .experience-location {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      color: #000145;
+      transition: 0.333s ease all; }
+      .toolbox .experience .experience-location:after,
+      .work-history .experience .experience-location:after,
+      .education .experience .experience-location:after {
+        content: attr(data-alt);
+        color: #E88873;
+        position: absolute;
+        display: block;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        transform: rotateX(90deg);
+        transition: inherit; }
+    .toolbox .experience .experience-position,
+    .work-history .experience .experience-position,
+    .education .experience .experience-position {
+      display: block;
+      color: #484A47; }
+      .toolbox .experience .experience-position:before,
+      .work-history .experience .experience-position:before,
+      .education .experience .experience-position:before {
+        content: '+ ';
+        font-weight: 700;
+        color: #E88873; }
+      .toolbox .experience .experience-position .experience-time,
+      .work-history .experience .experience-position .experience-time,
+      .education .experience .experience-position .experience-time {
+        display: block;
+        font-size: 0.75em;
+        line-height: 0.75em;
+        color: #484A47;
+        margin: 0 0 0.75em 0; }
+      .toolbox .experience .experience-position .experience-more,
+      .work-history .experience .experience-position .experience-more,
+      .education .experience .experience-position .experience-more {
+        transform: rotateX(90deg);
+        transition: 0.333s ease all; }
+    .toolbox .experience:hover,
+    .work-history .experience:hover,
+    .education .experience:hover {
+      cursor: pointer; }
+      .toolbox .experience:hover .experience-location:after,
+      .work-history .experience:hover .experience-location:after,
+      .education .experience:hover .experience-location:after {
+        z-index: 1;
+        transform: rotateX(0deg); }
+      .toolbox .experience:hover .experience-more,
+      .work-history .experience:hover .experience-more,
+      .education .experience:hover .experience-more {
+        transform: rotateX(0deg); }
 
 /*
 ### --------- ###

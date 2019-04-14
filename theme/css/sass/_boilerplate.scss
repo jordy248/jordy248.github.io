@@ -320,7 +320,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $font-family-headline;
   text-rendering: optimizeLegibility;
   color: #000
 }
@@ -379,7 +379,7 @@ ol>li:before {
   position: absolute;
   width: 1.5em;
   margin-left: -2em;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $font-family-headline;
   font-size: 1em;
   font-weight: 500;
   line-height: 1.5em;
@@ -577,7 +577,7 @@ table td {
 }
 
 table th {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $font-family-headline;
   font-weight: 500;
   font-size: 0.75em;
   line-height: 1.25em;
@@ -1290,7 +1290,7 @@ html.menu-active,
   height: 2em;
   margin: 0;
   padding: 2em 0;
-  font-family: 'Fira Sans', sans-serif
+  font-family: $font-family-body;
 }
 
 .pagination:after {
