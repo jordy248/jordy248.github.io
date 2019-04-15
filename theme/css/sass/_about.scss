@@ -55,7 +55,7 @@
 
             &:hover {
                 color: $color-navy;
-                transform: translateY(-3px);
+                transform: translateY(0px);
 
                 &:after {
                     top: 0;
@@ -88,6 +88,8 @@
         margin-top: 2.5em;
         border: 1px solid $color-darkgray;
         border-radius: 2px;
+        box-shadow: 4px 2px 8px $color-darkgray;
+        transition: 0.333s ease all;
 
         .experience-location {
             display: block;
@@ -112,6 +114,7 @@
         .experience-position {
             display: block;
             color: $color-darkgray;
+            overflow: hidden;
 
             &:before {
                 content: '+ ';
@@ -128,14 +131,22 @@
             }
 
             .experience-more {
-                transform: rotateX(90deg);
-
-                transition: 0.333s ease all;
+                display: block;
+                max-height: 0em;
+                line-height: 0em;
+                font-size: 0em;
+                
+                transition-property: max-height, line-height, font-size;
+                transition-duration: 0.333s, 0.333s, 0.333s;
+                transition-delay: 0s, 0s, 0s;
+                transition-timing-function: ease, ease, ease;
             }
         }
 
         &:hover {
             cursor: pointer;
+            transform: translateY(-3px);
+            box-shadow: 6px 4px 12px $color-darkgray;
 
             .experience-location {
 
@@ -144,9 +155,16 @@
                     transform: rotateX(0deg);
                 }
             }
+        }
 
-            .experience-more {
-                transform: rotateX(0deg);
+        &.active {
+            .experience-position {
+
+                .experience-more {
+                    max-height: 999em;
+                    line-height: inherit;
+                    font-size: inherit;
+                }
             }
         }
     }

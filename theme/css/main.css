@@ -2846,7 +2846,7 @@ html.menu-active,
     .work-history ul li:hover,
     .education ul li:hover {
       color: #000145;
-      transform: translateY(-3px); }
+      transform: translateY(0px); }
       .toolbox ul li:hover:after,
       .work-history ul li:hover:after,
       .education ul li:hover:after {
@@ -2873,7 +2873,9 @@ html.menu-active,
     padding: 0 0.5em 0.5em 0.5em;
     margin-top: 2.5em;
     border: 1px solid #484A47;
-    border-radius: 2px; }
+    border-radius: 2px;
+    box-shadow: 4px 2px 8px #484A47;
+    transition: 0.333s ease all; }
     .toolbox .experience .experience-location,
     .work-history .experience .experience-location,
     .education .experience .experience-location {
@@ -2898,7 +2900,8 @@ html.menu-active,
     .work-history .experience .experience-position,
     .education .experience .experience-position {
       display: block;
-      color: #484A47; }
+      color: #484A47;
+      overflow: hidden; }
       .toolbox .experience .experience-position:before,
       .work-history .experience .experience-position:before,
       .education .experience .experience-position:before {
@@ -2916,21 +2919,31 @@ html.menu-active,
       .toolbox .experience .experience-position .experience-more,
       .work-history .experience .experience-position .experience-more,
       .education .experience .experience-position .experience-more {
-        transform: rotateX(90deg);
-        transition: 0.333s ease all; }
+        display: block;
+        max-height: 0em;
+        line-height: 0em;
+        font-size: 0em;
+        transition-property: max-height, line-height, font-size;
+        transition-duration: 0.333s, 0.333s, 0.333s;
+        transition-delay: 0s, 0s, 0s;
+        transition-timing-function: ease, ease, ease; }
     .toolbox .experience:hover,
     .work-history .experience:hover,
     .education .experience:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      transform: translateY(-3px);
+      box-shadow: 6px 4px 12px #484A47; }
       .toolbox .experience:hover .experience-location:after,
       .work-history .experience:hover .experience-location:after,
       .education .experience:hover .experience-location:after {
         z-index: 1;
         transform: rotateX(0deg); }
-      .toolbox .experience:hover .experience-more,
-      .work-history .experience:hover .experience-more,
-      .education .experience:hover .experience-more {
-        transform: rotateX(0deg); }
+    .toolbox .experience.active .experience-position .experience-more,
+    .work-history .experience.active .experience-position .experience-more,
+    .education .experience.active .experience-position .experience-more {
+      max-height: 999em;
+      line-height: inherit;
+      font-size: inherit; }
 
 /*
 ### --------- ###
