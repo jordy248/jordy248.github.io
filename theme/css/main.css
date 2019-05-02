@@ -37,6 +37,16 @@
 ### end fonts ###
 ### --------- ###
 */
+/*
+### --------- ###
+### begin nav ###
+### --------- ###
+*/
+/*
+### --------- ###
+### end nav ###
+### --------- ###
+*/
 /* 
 ### ------------ ###
 ### begin mixins ###
@@ -1666,7 +1676,8 @@ html.menu-active,
     .menu-active #wrapper .hidden-close {
       display: block; }
   .menu-active #menu {
-    transform: translate3d(0, 0, 0); }
+    transform: translate3d(0, 0, 0);
+    box-shadow: -5px 0px 14px #484A47; }
   .nav-button {
     position: fixed;
     top: 0;

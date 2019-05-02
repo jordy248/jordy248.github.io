@@ -426,6 +426,8 @@
 
         #menu {
             transform: translate3d(0, 0, 0);
+
+            box-shadow: -5px 0px 14px $color-darkgray;
         }
     }
 
