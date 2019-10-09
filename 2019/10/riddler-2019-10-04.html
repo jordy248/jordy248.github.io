@@ -220,15 +220,15 @@
 <p>It takes the general form: <span class="math">\(P(A|B)=\frac{P(B|A) * P(A)}{P(B)}\)</span></p>
 <p>In other words, the conditional probability of event A given event B is equal to the conditional probability of event B given event A multiplied by the independent (or marginal) probability of event A all divided by the marginal probability of event B.</p>
 <p>In our case, this means: </p>
-<p><span class="math">\(P(\text{B is the answer}|\text{50:50 leaves B and one other answer})\)</span>
+<p><span class="math">\(P(\text{B is the answer}|\text{50:50 returns B})\)</span>
 <span class="math">\(=\)</span>
-<span class="math">\(\frac{P(\text{50:50 leaves B and one other answer}|\text{B is the answer}) * P(\text{B is the answer})}{P(\text{50:50 leaves B and one other answer})}\)</span></p>
+<span class="math">\(\frac{P(\text{50:50 returns B}|\text{B is the answer}) * P(\text{B is the answer})}{P(\text{50:50 returns B})}\)</span></p>
 <p>Let's break this down a bit:</p>
 <ul>
-<li><span class="math">\(P(\text{B is the answer}|\text{50:50 leaves B and one other answer})\)</span> -- or <span class="math">\(P(A|B)\)</span> -- is the unknown conditional probability we are trying to solve for.</li>
-<li><span class="math">\(P(\text{50:50 leaves B and one other answer}|\text{B is the answer})\)</span> -- or <span class="math">\(P(B|A)\)</span> -- is equal to 100% because if B is the answer, 50:50 will have to leave it (as well as one other answer that we don't care about specifically).</li>
+<li><span class="math">\(P(\text{B is the answer}|\text{50:50 returns B})\)</span> -- or <span class="math">\(P(A|B)\)</span> -- is the unknown conditional probability we are trying to solve for.</li>
+<li><span class="math">\(P(\text{50:50 returns B}|\text{B is the answer})\)</span> -- or <span class="math">\(P(B|A)\)</span> -- is equal to 100% because if B is the answer, 50:50 will have to leave it (as well as one other answer that we don't care about specifically).</li>
 <li><span class="math">\(P(\text{B is the answer})\)</span> -- or <span class="math">\(P(A)\)</span> -- is the event we assign 70% marginal credibility to.</li>
-<li><span class="math">\(P(\text{50:50 leaves B and one other answer})\)</span> -- or <span class="math">\(P(B)\)</span> -- can be assigned 79% credibility.<ul>
+<li><span class="math">\(P(\text{50:50 returns B})\)</span> -- or <span class="math">\(P(B)\)</span> -- can be assigned 79% credibility.<ul>
 <li>There are two cases in which B can remain after the 50:50, and we need to account for both of them:<ul>
 <li>B can remain after the 50:50 <em>if B is correct</em>:<ul>
 <li>The probability of this is the probability that B is correct (<span class="math">\(P(A)=70\%\)</span>) times the probability that B remains after the 50:50 given that B is correct (<span class="math">\(P(B|A)=100\%\)</span>)</li>
