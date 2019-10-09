@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://jordynelson.io/</loc>
-<lastmod>2019-05-02T09:05:19-00:00</lastmod>
+<lastmod>2019-10-09T01:39:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/archives.html</loc>
-<lastmod>2019-05-02T09:05:19-00:00</lastmod>
+<lastmod>2019-10-09T01:39:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/tags.html</loc>
-<lastmod>2019-05-02T09:05:19-00:00</lastmod>
+<lastmod>2019-10-09T01:39:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://jordynelson.io/404</loc>
-<lastmod>2019-04-06T03:43:55-04:00</lastmod>
+<lastmod>2019-10-07T21:01:31-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://jordynelson.io/pages/about/.html</loc>
 <lastmod>2019-03-12T08:21:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://jordynelson.io/2019/09/riddler-2019-09-27.html</loc>
+<lastmod>2019-09-29T08:22:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>

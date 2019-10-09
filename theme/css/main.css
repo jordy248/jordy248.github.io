@@ -2442,6 +2442,8 @@ html.menu-active,
     margin-left: -5%; }
   .post-content .highlight {
     font-size: 62.5%; }
+    .post-content .highlight pre {
+      overflow: scroll; }
 
 .post-info {
   margin-top: 6em;
