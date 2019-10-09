@@ -222,9 +222,9 @@ MathJax.Hub.Config({
 <p>Let's first summarize the probabilities and values of success (as success is in the eye of the batter) for each team:</p>
 </blockquote>
 <p>If we begin by allocating 70% of our credibility to B and evenly distribute the remaining 30% among the remaining 3 answers (A, C, and D), it's tempting to believe that elimating two of the remaining 3 options means that their share of the 30% of our credibility all flows to answer B, bumping it to 90%.</p>
-<p>But is there a smarter way to reallocate our credibility in light of our 50:50?</p>
-<p>There is if we apply Bayes' Theorem! Bayes' Theorem gives us a mechanism for updating our prior beliefs (expressed in terms of probabilities or credibilities) in light of additional information.</p>
-<p>It takes the general form: <span class="math">\(P(A|B)=\frac{P(B|A) * P(A)}{P(B)}\)</span></p>
+<p>But is there a better way to reallocate our credibility in light of our 50:50?</p>
+<p>There is if we apply Bayes' Theorem! It gives us a mechanism for updating our prior beliefs (expressed in terms of probabilities or credibilities) in light of additional information.</p>
+<p>Bayes' Theorem takes the general form: <span class="math">\(P(A|B)=\frac{P(B|A) * P(A)}{P(B)}\)</span></p>
 <p>In other words, the conditional probability of event A given event B is equal to the conditional probability of event B given event A multiplied by the independent (or marginal) probability of event A all divided by the marginal probability of event B.</p>
 <p>In our case, this means: </p>
 <div class="mathjax-scale">$$P(\text{B is the answer}|\text{50:50 returns B})=$$</div>
@@ -234,8 +234,8 @@ MathJax.Hub.Config({
 <p>Let's break this down a bit:</p>
 <ul>
 <li><div class="mathjax-scale"><span class="math">\(P(\text{B is the answer}|\text{50:50 returns B})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(A|B)\)</span></div> -- is the unknown conditional probability we are trying to solve for.</li>
-<li><div class="mathjax-scale"><span class="math">\(P(\text{50:50 returns B}|\text{B is the answer})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(B|A)\)</span></div> -- is equal to 100% because if B is the answer, 50:50 will have to leave it (as well as one other answer that we don't care about specifically).</li>
-<li><div class="mathjax-scale"><span class="math">\(P(\text{B is the answer})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(A)\)</span></div> -- is the event we assign 70% marginal credibility to.</li>
+<li><div class="mathjax-scale"><span class="math">\(P(\text{50:50 returns B}|\text{B is the answer})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(B|A)\)</span></div> -- is equal to 100% because if B is the answer, 50:50 necessarily leaves it (as well as one other answer that we don't care about specifically).</li>
+<li><div class="mathjax-scale"><span class="math">\(P(\text{B is the answer})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(A)\)</span></div> -- is the event we assign 70% marginal credibility to from the outset.</li>
 <li><div class="mathjax-scale"><span class="math">\(P(\text{50:50 returns B})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(B)\)</span></div> -- can be assigned 79% credibility.<ul>
 <li>There are two cases in which B can remain after the 50:50, and we need to account for both of them:<ul>
 <li>B can remain after the 50:50 <strong>if B is correct</strong>:<ul>
@@ -243,7 +243,7 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li>B can remain after the 50:50 <strong>if B is incorrect and it happens to be returned by 50:50 along with the correct answer</strong>:<ul>
-<li>The probability of this is the probability that B is incorrect (or 30%) times the probability that B remains after the 50:50. If we assume that the answer is, say, A (though this holds regardless of which non-B answer we assume is correct), possible tuples resulting from the 50:50 are <span class="math">\(\{A,B\}\)</span>, <span class="math">\(\{A,C\}\)</span>, and <span class="math">\(\{A,D\}\)</span>. We notice that B appears in 1 out of 3, or 30%.</li>
+<li>The probability of this is the joint probability that B is incorrect (or 30%) and that B remains after the 50:50. If we assume that the answer is, say, A (though this holds regardless of which non-B answer we assume is correct), possible tuples resulting from the 50:50 are <span class="math">\(\{A,B\}\)</span>, <span class="math">\(\{A,C\}\)</span>, and <span class="math">\(\{A,D\}\)</span>. We notice that B appears in 1 out of 3, or 30%.</li>
 </ul>
 </li>
 <li>Thus, the probability that B remains after the 50:50 is <span class="math">\((0.7 * 1)+(0.3 * 0.3)=0.79\)</span></li>
