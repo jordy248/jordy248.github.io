@@ -226,7 +226,7 @@ MathJax.Hub.Config({
 <br />
 Kasparov: <span class="math">\(\frac{3}{48} - \frac{40}{48} = \frac{3}{8}\)</span></p>
 <p>And because Karpov has already won five games on his way to six, Kasparov needs to win 3 in a row to claim his own victory. </p>
-<p>Thus, this becomes a question for the binomial distribution. The binomial distribution takes the parameters <span class="math">\(n\)</span> and <span class="math">\(p\)</span> and the form <span class="math">\(X ~ Bin(n,p) = {n \choose x} * p^k * (1-p)^{(n-k)}\)</span></p>
+<p>Thus, this becomes a question for the binomial distribution. The binomial distribution takes the parameters <span class="math">\(n\)</span> and <span class="math">\(p\)</span> and the form <span class="math">\(X ~ Bin(n,p) = {n \choose k} * p^k * (1-p)^{(n-k)}\)</span></p>
 <p>In Kasparov's case, this becomes: <span class="math">\({3 \choose 3} * (\frac{3}{8})^3 * (1-\frac{3}{8})^{(3-3)}\)</span>. This is the same as <span class="math">\(\frac{5}{8}^3 = \frac{27}{512}\)</span>. Or 0.05273438.</p>
 <p>And as always, we can simulate with R:</p>
 <div class="highlight"><pre><span></span><span class="c1">##### ----------------- #####</span>
