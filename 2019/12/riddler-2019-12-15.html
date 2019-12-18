@@ -215,18 +215,18 @@ MathJax.Hub.Config({
 });
 </script>
 
-<p>The newest <a href="https://fivethirtyeight.com/features/can-you-solve-a-particularly-prismatic-puzzle/">Riddler Express</a> is a probability puzzler that tests our fortitude to "choose K" (Karpov or Kasparov!) in one of chess's great matches.</p>
+<p>The newest <a href="https://fivethirtyeight.com/features/can-you-solve-a-particularly-prismatic-puzzle/">Riddler Express</a> is a probability puzzler that asks us to "choose K" (Karpov or Kasparov!) in one of chess's great matches.</p>
 <blockquote>
 <p>From Anna Engelsone comes a riddle about a historic chess battle:</p>
 <p>The infamous 1984 World Chess Championship match between the reigning world champion Anatoly Karpov and 21-year-old Garry Kasparov was supposed to have been played until either player had won six games. Instead, it went on for 48 games: Karpov won five, Kasparov won 3, and the other 40 games each ended in a draw. Alas, the match was controversially terminated without a winner.</p>
 <p>We can deduce from the games Karpov and Kasparov played that, independently of other games, Karpov’s chances of winning each game were 5/48, Kasparov’s chances were 3/48, and the chances of a draw were 40/48. Had the match been allowed to continue indefinitely, what would have been Kasparov’s chances of eventually winning the match?</p>
 </blockquote>
-<p>Draws don't give us any additional information on the slog to a winner, so let's go ahead and discard them. </p>
-<p>Karpov: <span class="math">\(\frac{5}{48} - \frac{40}{48} = \frac{5}{8}\)</span>
+<p>Draws don't give us any additional information on the slog to a winner, so let's go ahead and ignore them, leaving us with these new probabilities:</p>
+<p>Karpov: <span class="math">\(\frac{5}{8}\)</span>
 <br />
-Kasparov: <span class="math">\(\frac{3}{48} - \frac{40}{48} = \frac{3}{8}\)</span></p>
-<p>And because Karpov has already won five games on his way to six, Kasparov needs to win 3 in a row to claim his own victory. </p>
-<p>Thus, this becomes a question for the binomial distribution. The binomial distribution takes the parameters <span class="math">\(n\)</span> and <span class="math">\(p\)</span> and the form <span class="math">\(X ~ Bin(n,p) = {n \choose k} * p^k * (1-p)^{(n-k)}\)</span></p>
+Kasparov: <span class="math">\(\frac{3}{8}\)</span></p>
+<p>And because Karpov has already won five games on his way to six, Kasparov needs to win 3 in a row (before Karpov wins one more) to claim his own victory. </p>
+<p>This then becomes a question for the binomial distribution. The binomial distribution takes the parameters <span class="math">\(n\)</span> and <span class="math">\(p\)</span> and the form <span class="math">\(X ~ Bin(n,p) = {n \choose k} * p^k * (1-p)^{(n-k)}\)</span></p>
 <p>In Kasparov's case, this becomes: <span class="math">\({3 \choose 3} * (\frac{3}{8})^3 * (1-\frac{3}{8})^{(3-3)}\)</span>. This is the same as <span class="math">\(\frac{5}{8}^3 = \frac{27}{512}\)</span>. Or 0.05273438.</p>
 <p>And as always, we can simulate with R:</p>
 <div class="highlight"><pre><span></span><span class="c1">##### ----------------- #####</span>
