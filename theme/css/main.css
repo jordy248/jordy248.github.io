@@ -1146,6 +1146,7 @@ html.menu-active,
 ########################
 */
 .pagination {
+  display: block;
   position: relative;
   height: 2em;
   margin: 0;
