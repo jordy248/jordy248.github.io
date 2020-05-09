@@ -229,7 +229,7 @@ Kasparov: <span class="math">\(\frac{3}{8}\)</span></p>
 <p>This then becomes a question for the binomial distribution. The binomial distribution takes the parameters <span class="math">\(n\)</span> and <span class="math">\(p\)</span> and the form <span class="math">\(X \sim Bin(n,p) = {n \choose k} * p^k * (1-p)^{(n-k)}\)</span> (where <span class="math">\(n\)</span> is the number of trials, <span class="math">\(p\)</span> is the probability of the event occurring, and <span class="math">\(k\)</span> is the number of times we want the event to occur).</p>
 <p>In Kasparov's case, this becomes: <span class="math">\({3 \choose 3} * (\frac{3}{8})^3 * (1-\frac{3}{8})^{(3-3)}\)</span>. This is the same as <span class="math">\(\frac{3}{8}^3 = \frac{27}{512}\)</span>. Or 0.05273438.</p>
 <p>And as always, we can simulate with R:</p>
-<div class="highlight"><pre><span></span><span class="c1">##### ----------------- #####</span>
+<div class="highlight"><pre><span></span><code><span class="c1">##### ----------------- #####</span>
 <span class="c1">##### ----------------- #####</span>
 <span class="c1">##### clean environment #####</span>
 <span class="c1">##### ----------------- #####</span>
@@ -273,7 +273,7 @@ Kasparov: <span class="math">\(\frac{3}{8}\)</span></p>
     <span class="n">res</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span>       <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">matchup</span><span class="p">),</span>
                   <span class="n">size</span>    <span class="o">=</span> <span class="m">1</span><span class="p">,</span>
                   <span class="n">replace</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span>
-                  <span class="n">prob</span>    <span class="o">=</span> <span class="nf">unlist</span><span class="p">(</span><span class="n">matchup</span><span class="p">)</span><span class="nf">[grepl</span><span class="p">(</span><span class="s">&#39;prob&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">matchup</span><span class="p">)))</span><span class="n">]</span><span class="p">)</span>
+                  <span class="n">prob</span>    <span class="o">=</span> <span class="nf">unlist</span><span class="p">(</span><span class="n">matchup</span><span class="p">)[</span><span class="nf">grepl</span><span class="p">(</span><span class="s">&#39;prob&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">matchup</span><span class="p">)))])</span>
 
     <span class="nf">return</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 <span class="p">}</span>
@@ -284,10 +284,10 @@ Kasparov: <span class="math">\(\frac{3}{8}\)</span></p>
 <span class="n">match</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">matchup</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">curr_matchup</span> <span class="o">&lt;-</span> <span class="n">matchup</span>
 
-    <span class="nf">while</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)</span><span class="nf">[grepl</span><span class="p">(</span><span class="s">&#39;(karpov|kasparov)\\.outs&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)))</span><span class="n">]</span> <span class="o">==</span> <span class="m">6</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">while</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)[</span><span class="nf">grepl</span><span class="p">(</span><span class="s">&#39;(karpov|kasparov)\\.outs&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)))]</span> <span class="o">==</span> <span class="m">6</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">game_out</span> <span class="o">&lt;-</span> <span class="nf">game</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)</span>
 
-        <span class="n">curr_matchup[[game_out]][[</span><span class="s">&#39;outs&#39;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="n">curr_matchup[[game_out]][[</span><span class="s">&#39;outs&#39;</span><span class="n">]]</span> <span class="o">+</span> <span class="m">1</span>
+        <span class="n">curr_matchup</span><span class="p">[[</span><span class="n">game_out</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span> <span class="o">&lt;-</span> <span class="n">curr_matchup</span><span class="p">[[</span><span class="n">game_out</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span> <span class="o">+</span> <span class="m">1</span>
     <span class="p">}</span>
     <span class="nf">return</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)</span>
 <span class="p">}</span>
@@ -318,9 +318,9 @@ Kasparov: <span class="math">\(\frac{3}{8}\)</span></p>
 <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n_sim</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">match_out</span> <span class="o">&lt;-</span> <span class="nf">match</span><span class="p">(</span><span class="n">matchup</span><span class="p">)</span>
 
-    <span class="n">karpov_out</span>   <span class="o">&lt;-</span> <span class="n">match_out[[</span><span class="s">&#39;karpov&#39;</span><span class="n">]][[</span><span class="s">&#39;outs&#39;</span><span class="n">]]</span>
-    <span class="n">kasparov_out</span> <span class="o">&lt;-</span> <span class="n">match_out[[</span><span class="s">&#39;kasparov&#39;</span><span class="n">]][[</span><span class="s">&#39;outs&#39;</span><span class="n">]]</span> 
-    <span class="n">draws_out</span>    <span class="o">&lt;-</span> <span class="n">match_out[[</span><span class="s">&#39;draw&#39;</span><span class="n">]][[</span><span class="s">&#39;outs&#39;</span><span class="n">]]</span>
+    <span class="n">karpov_out</span>   <span class="o">&lt;-</span> <span class="n">match_out</span><span class="p">[[</span><span class="s">&#39;karpov&#39;</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span>
+    <span class="n">kasparov_out</span> <span class="o">&lt;-</span> <span class="n">match_out</span><span class="p">[[</span><span class="s">&#39;kasparov&#39;</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span> 
+    <span class="n">draws_out</span>    <span class="o">&lt;-</span> <span class="n">match_out</span><span class="p">[[</span><span class="s">&#39;draw&#39;</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span>
 
     <span class="n">n_games</span>      <span class="o">&lt;-</span> <span class="n">karpov_out</span> <span class="o">+</span> <span class="n">kasparov_out</span> <span class="o">+</span> <span class="n">draws_out</span>
 
@@ -338,8 +338,8 @@ Kasparov: <span class="math">\(\frac{3}{8}\)</span></p>
 <span class="c1">### ------------------------ ###</span>
 <span class="c1">### prob of kasparov winning ###</span>
 <span class="c1">### ------------------------ ###</span>
-<span class="nf">length</span><span class="p">(</span><span class="n">winner[winner</span> <span class="o">==</span> <span class="s">&#39;kasparov&#39;</span><span class="n">]</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">winner</span><span class="p">)</span>
-</pre></div>
+<span class="nf">length</span><span class="p">(</span><span class="n">winner</span><span class="p">[</span><span class="n">winner</span> <span class="o">==</span> <span class="s">&#39;kasparov&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">winner</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>Which gives us: 0.05315</p>
@@ -499,7 +499,7 @@ Kasparov: <span class="math">\(\frac{3}{8}\)</span></p>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <span id="credits-theme" class="credits">&copy; 2019 Jordy Nelson</span>
+          <span id="credits-theme" class="credits">&copy; 2020 Jordy Nelson</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
           <div id="credits-social" class="credits">

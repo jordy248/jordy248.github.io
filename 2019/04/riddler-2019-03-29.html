@@ -223,7 +223,7 @@
 </ul>
 <p>If we saw six out of 30 unique cards in the first game, that means that we start the second game with 24 out of the 30 cards that we weren't dealt. So in the second game, the first card we're dealt has (30-6-0/30) probability of being new to us, the second card has a (30-6-1)/(30-1) probability of being new to us, and the third card has a (30-6-2)/(30-2) probability of being new to us. So the probability of all three cards being new to us is 24/30 * 23/29 * 22/28 = 0.4985222. In other words, there's a ~49.85% chance we haven't seen any of the three cards we're dealt in the second game &ndash; or a ~50.15% chance we have seen at least one, making it ever-so-slightly more likely that we've already seen at least one of the first three cards we're dealt in the second game.</p>
 <p>With such razor-thin odds in favor of the first three cards we're dealt in the second game being unseen, I was curious to see whether a simulation coded up in R would confirm this result.</p>
-<div class="highlight"><pre><span></span><span class="c1"># riddler</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># riddler</span>
 <span class="c1"># 2019-03-29</span>
 
 <span class="c1">##### ------- #####</span>
@@ -284,7 +284,7 @@
                        <span class="n">size</span>    <span class="o">=</span> <span class="n">n_cards</span><span class="p">,</span>
                        <span class="n">replace</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
 
-        <span class="n">deck</span> <span class="o">&lt;-</span> <span class="n">deck[</span><span class="o">-</span><span class="n">hand]</span>
+        <span class="n">deck</span> <span class="o">&lt;-</span> <span class="n">deck</span><span class="p">[</span><span class="o">-</span><span class="n">hand</span><span class="p">]</span>
 
         <span class="c1"># return</span>
         <span class="n">res</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">hand</span> <span class="o">=</span> <span class="n">hand</span><span class="p">,</span>
@@ -323,7 +323,7 @@
 
         <span class="c1"># check for dupes and update dupe_terminals</span>
         <span class="nf">if</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">hand_game_1</span> <span class="o">%in%</span> <span class="n">hand_game_2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">dupe_terminals[i]</span> <span class="o">&lt;-</span> <span class="m">1L</span>
+                <span class="n">dupe_terminals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">1L</span>
         <span class="p">}</span>
 
         <span class="c1"># init progress</span>
@@ -337,15 +337,15 @@
 
 <span class="c1"># second games that included at least one card that was seen in game 1</span>
 <span class="nf">sum</span><span class="p">(</span><span class="n">dupe_terminals</span><span class="p">)</span><span class="o">/</span><span class="nf">length</span><span class="p">(</span><span class="n">dupe_terminals</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
-<div class="highlight"><pre><span></span><span class="n">[1]</span> <span class="m">0.501665</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.501665</span>
+</code></pre></div>
 
 
 <p>Over the course of a million simulations, we roughly match our computed result above. And we can watch the simulations converge on this result:</p>
-<div class="highlight"><pre><span></span><span class="c1">### -------- ###</span>
+<div class="highlight"><pre><span></span><code><span class="c1">### -------- ###</span>
 <span class="c1">### plot res ### --------------------------------------------------------------</span>
 <span class="c1">### -------- ###</span>
 <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">samples</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">dupe_terminals</span><span class="p">),</span>
@@ -356,7 +356,7 @@
         <span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span>
         <span class="nf">geom_line</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">log</span><span class="p">(</span><span class="n">samples</span><span class="p">),</span>
                       <span class="n">y</span> <span class="o">=</span> <span class="n">running_rate</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="Riddler Express 2019-03-29 Plot" src="../../theme/assets_images/riddler_express_2019-03-29.png" title="Riddler Express 2019-03-29 Plot"></p>
@@ -454,7 +454,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <span id="credits-theme" class="credits">&copy; 2019 Jordy Nelson</span>
+          <span id="credits-theme" class="credits">&copy; 2020 Jordy Nelson</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
           <div id="credits-social" class="credits">

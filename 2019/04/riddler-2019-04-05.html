@@ -218,7 +218,7 @@
 <p>If both of the cards loaded with 50 drinks are empty when we make our coffee run, this means we've already ordered exactly 100 coffees. 50 of these orders occurred on the card we tried using, and 50 occurred on the other card. The probability of this scenario happening is <code>((1/2) ^ (100)) * choose(100, 50)</code> &dash; or just about 8%. <strong>So the probability that that the card we didn't has at least one drink remaining (i.e., that it's not the case that both cards are empty when we order the 101st drink) is about 92%.</strong></p>
 <p>Let's confirm with an R simulation.</p>
 <p>First, a little housekeeping:</p>
-<div class="highlight"><pre><span></span><span class="c1">### ---- ###</span>
+<div class="highlight"><pre><span></span><code><span class="c1">### ---- ###</span>
 <span class="c1">### init ### ------------------------------------------------------------------</span>
 <span class="c1">### ---- ###</span>
 <span class="nf">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="nf">ls</span><span class="p">())</span>
@@ -238,11 +238,11 @@
 <span class="c1"># init cards</span>
 <span class="n">cards</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">card1</span> <span class="o">=</span> <span class="m">50</span><span class="p">,</span>
               <span class="n">card2</span> <span class="o">=</span> <span class="m">50</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>We'll define a little helper function to randomly choose one of the cards as well as a recursive function to simulate buying coffee using our cards:</p>
-<div class="highlight"><pre><span></span><span class="c1">### ------------------------------ ###</span>
+<div class="highlight"><pre><span></span><code><span class="c1">### ------------------------------ ###</span>
 <span class="c1">### funs to simulate buying coffee ### ----------------------------------------</span>
 <span class="c1">### ------------------------------ ###</span>
 
@@ -268,19 +268,19 @@
         <span class="n">card_chosen_idx</span> <span class="o">&lt;-</span> <span class="nf">choose_card</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
 
         <span class="c1"># break case = chosen card is empty</span>
-        <span class="nf">if</span><span class="p">(</span><span class="n">wallet[[card_chosen_idx]]</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">if</span><span class="p">(</span><span class="n">wallet</span><span class="p">[[</span><span class="n">card_chosen_idx</span><span class="p">]]</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nf">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
         <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
-                <span class="n">wallet[[card_chosen_idx]]</span> <span class="o">&lt;-</span> <span class="n">wallet[[card_chosen_idx]]</span> <span class="o">-</span> <span class="m">1</span>
+                <span class="n">wallet</span><span class="p">[[</span><span class="n">card_chosen_idx</span><span class="p">]]</span> <span class="o">&lt;-</span> <span class="n">wallet</span><span class="p">[[</span><span class="n">card_chosen_idx</span><span class="p">]]</span> <span class="o">-</span> <span class="m">1</span>
 
                 <span class="nf">return</span><span class="p">(</span><span class="nf">buy_coffee</span><span class="p">(</span><span class="n">wallet</span><span class="p">))</span>
         <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Then we'll simulate a hundred thousand scenarios:</p>
-<div class="highlight"><pre><span></span><span class="c1">### -------------------- ###</span>
+<div class="highlight"><pre><span></span><code><span class="c1">### -------------------- ###</span>
 <span class="c1">### simulate coffee runs ### --------------------------------------------------</span>
 <span class="c1">### -------------------- ###</span>
 
@@ -300,32 +300,32 @@
         <span class="n">coffee_run</span> <span class="o">&lt;-</span> <span class="nf">buy_coffee</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
 
         <span class="c1"># store number of drinks on other card</span>
-        <span class="n">coffee_runs[i]</span> <span class="o">&lt;-</span> <span class="nf">as.integer</span><span class="p">(</span><span class="n">coffee_run</span><span class="nf">[which.max</span><span class="p">(</span><span class="n">coffee_run</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+        <span class="n">coffee_runs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="nf">as.integer</span><span class="p">(</span><span class="n">coffee_run</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">coffee_run</span><span class="p">)])</span>
 
         <span class="c1"># increment progress</span>
         <span class="n">pb</span><span class="o">$</span><span class="nf">tick</span><span class="p">()</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Let's what our simulation thinks the probability of the other card having drinks on it is:</p>
-<div class="highlight"><pre><span></span><span class="c1">### ----------------- ###</span>
+<div class="highlight"><pre><span></span><code><span class="c1">### ----------------- ###</span>
 <span class="c1">### check sim results ### -----------------------------------------------------</span>
 <span class="c1">### ----------------- ###</span>
 
 <span class="c1"># prob other card still has drinks</span>
 <span class="m">1</span> <span class="o">-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">coffee_runs</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">coffee_runs</span><span class="p">)</span>
 
-<span class="n">[1]</span> <span class="m">0.92041</span>
-</pre></div>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.92041</span>
+</code></pre></div>
 
 
 <p>Just over 92% probability that the other card has drinks on it!</p>
 <p>And how many drinks can we expect that card to have on it?</p>
-<div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">coffee_runs</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">mean</span><span class="p">(</span><span class="n">coffee_runs</span><span class="p">)</span>
 
-<span class="n">[1]</span> <span class="m">7.03834</span>
-</pre></div>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">7.03834</span>
+</code></pre></div>
             </section>
 
             <section class="post-info">
@@ -429,7 +429,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <span id="credits-theme" class="credits">&copy; 2019 Jordy Nelson</span>
+          <span id="credits-theme" class="credits">&copy; 2020 Jordy Nelson</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
           <div id="credits-social" class="credits">

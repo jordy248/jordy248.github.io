@@ -248,7 +248,7 @@
 </tbody>
 </table>
 <p>With these probabilities, we can generalize the expected number of successes for each team by describing the number of expected successes for each inning at bat; that is, we are interested in the number of successes before three strikeouts. The distribution that allows us to do this is the negative binomial distribution, which extends the geometric distribution and describes the number of <code>k</code> successes until a stopping criterion of <code>n</code> failures have been observed.</p>
-<div class="highlight"><pre><span></span><span class="c1">##### ------------------------------------- #####</span>
+<div class="highlight"><pre><span></span><code><span class="c1">##### ------------------------------------- #####</span>
 <span class="c1">##### ------------------------------------- #####</span>
 <span class="c1">##### distribution modeling of expectations #####</span>
 <span class="c1">##### ------------------------------------- #####</span>
@@ -314,7 +314,7 @@
   <span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span> <span class="s">&#39;Expected Successes X Team&#39;</span><span class="p">,</span>
        <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Expected Successes&#39;</span><span class="p">,</span>
        <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Probability&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="Riddler 2019-09-30 Plot" src="../../theme/assets_images/riddler-2019-09-27-plot-1.png" title="Riddler 2019-09-30 Plot"></p>
@@ -322,7 +322,7 @@
 <p>But those are just the expected successes, though -- not runs. </p>
 <p>We could extend expected successes to runs. Or we could just go ahead and simulate a season.</p>
 <p>First we'll get things prepared:</p>
-<div class="highlight"><pre><span></span><span class="c1">##### ----------------- #####</span>
+<div class="highlight"><pre><span></span><code><span class="c1">##### ----------------- #####</span>
 <span class="c1">##### ----------------- #####</span>
 <span class="c1">##### clean environment #####</span>
 <span class="c1">##### ----------------- #####</span>
@@ -360,11 +360,11 @@
                                                                 <span class="s">&#39;prob_for&#39;</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">))))</span>
 
 <span class="n">n_games</span> <span class="o">&lt;-</span> <span class="m">1e5</span> <span class="c1"># number of games each team will play against each other team</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Then we'll define the functions that will help us simulate an entire season:</p>
-<div class="highlight"><pre><span></span><span class="c1">##### ------------------------- #####</span>
+<div class="highlight"><pre><span></span><code><span class="c1">##### ------------------------- #####</span>
 <span class="c1">##### ------------------------- #####</span>
 <span class="c1">##### def funs to simulate game #####</span>
 <span class="c1">##### ------------------------- #####</span>
@@ -375,7 +375,7 @@
 <span class="c1">### ---------------------- ###</span>
 <span class="n">bat</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">team</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1"># prob of positive outcome</span>
-  <span class="n">prob_for</span>     <span class="o">&lt;-</span> <span class="n">teams_list[[team]]</span><span class="o">$</span><span class="n">outcomes</span><span class="o">$</span><span class="n">pos</span><span class="o">$</span><span class="n">prob_for</span>
+  <span class="n">prob_for</span>     <span class="o">&lt;-</span> <span class="n">teams_list</span><span class="p">[[</span><span class="n">team</span><span class="p">]]</span><span class="o">$</span><span class="n">outcomes</span><span class="o">$</span><span class="n">pos</span><span class="o">$</span><span class="n">prob_for</span>
   <span class="n">prob_against</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="n">prob_for</span>
 
   <span class="c1"># outcome</span>
@@ -394,7 +394,7 @@
 <span class="c1">### -------------------------------------- ###</span>
 <span class="n">outcomes_trans</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">team</span><span class="p">,</span> <span class="n">half_inning_res</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1"># val of positive outcome</span>
-  <span class="n">val</span>  <span class="o">&lt;-</span> <span class="n">teams_list[[team]]</span><span class="o">$</span><span class="n">outcomes</span><span class="o">$</span><span class="n">pos</span><span class="o">$</span><span class="n">val</span>
+  <span class="n">val</span>  <span class="o">&lt;-</span> <span class="n">teams_list</span><span class="p">[[</span><span class="n">team</span><span class="p">]]</span><span class="o">$</span><span class="n">outcomes</span><span class="o">$</span><span class="n">pos</span><span class="o">$</span><span class="n">val</span>
 
   <span class="c1"># translate value into runs (four bases)</span>
   <span class="n">runs_trans_val</span> <span class="o">&lt;-</span> <span class="n">val</span> <span class="o">/</span> <span class="m">4</span>
@@ -426,7 +426,7 @@
   <span class="n">bat_res</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">bat_res</span><span class="p">,</span> <span class="n">bat_out</span><span class="p">)</span>
 
   <span class="c1"># break case = bat_res contains three zeroes (strike-outs)</span>
-  <span class="nf">if</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">bat_res[bat_res</span> <span class="o">==</span> <span class="m">0</span><span class="n">]</span><span class="p">)</span> <span class="o">==</span> <span class="m">3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">bat_res</span><span class="p">[</span><span class="n">bat_res</span> <span class="o">==</span> <span class="m">0</span><span class="p">])</span> <span class="o">==</span> <span class="m">3</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1"># translate outcome to runs</span>
     <span class="n">inning_out</span>   <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">bat_res</span><span class="p">)</span>
     <span class="n">inning_runs</span> <span class="o">&lt;-</span> <span class="nf">outcomes_trans</span><span class="p">(</span><span class="n">team</span><span class="p">,</span> <span class="n">inning_out</span><span class="p">)</span>
@@ -488,11 +488,11 @@
               <span class="s">&#39;team2_score&#39;</span> <span class="o">=</span> <span class="n">team2_score</span><span class="p">,</span>
               <span class="s">&#39;n_innings&#39;</span>   <span class="o">=</span> <span class="n">innings_counter</span><span class="p">))</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>And now we'll put it all together in a simulation:</p>
-<div class="highlight"><pre><span></span><span class="c1">##### --------------- #####</span>
+<div class="highlight"><pre><span></span><code><span class="c1">##### --------------- #####</span>
 <span class="c1">##### --------------- #####</span>
 <span class="c1">##### simulate season #####</span>
 <span class="c1">##### --------------- #####</span>
@@ -517,11 +517,11 @@
 <span class="c1"># init season_res_df #</span>
 <span class="c1"># ------------------ #</span>
 <span class="n">season_res_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">matchup_game</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n_games</span><span class="p">,</span> <span class="nf">length</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">)),</span>
-                            <span class="n">team_1</span>       <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">)</span><span class="nf">[rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="bp">T</span><span class="p">,</span> <span class="bp">F</span><span class="p">),</span> 
-                                                                                  <span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">))</span> <span class="o">/</span> <span class="m">2</span><span class="p">)</span><span class="n">]</span><span class="p">),</span>
+                            <span class="n">team_1</span>       <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">)[</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="bp">T</span><span class="p">,</span> <span class="bp">F</span><span class="p">),</span> 
+                                                                                  <span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">))</span> <span class="o">/</span> <span class="m">2</span><span class="p">)]),</span>
                                                <span class="n">n_games</span><span class="p">),</span>
-                            <span class="n">team_2</span>       <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">)</span><span class="nf">[rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="bp">F</span><span class="p">,</span> <span class="bp">T</span><span class="p">),</span> 
-                                                                                  <span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">))</span> <span class="o">/</span> <span class="m">2</span><span class="p">)</span><span class="n">]</span><span class="p">),</span>
+                            <span class="n">team_2</span>       <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">)[</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="bp">F</span><span class="p">,</span> <span class="bp">T</span><span class="p">),</span> 
+                                                                                  <span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">season_matchups_list</span><span class="p">))</span> <span class="o">/</span> <span class="m">2</span><span class="p">)]),</span>
                                                <span class="n">n_games</span><span class="p">))</span> <span class="o">%&gt;%</span>
   <span class="nf">mutate_if</span><span class="p">(</span><span class="n">is.factor</span><span class="p">,</span> <span class="n">as.character</span><span class="p">)</span> <span class="o">%&gt;%</span>
   <span class="nf">rowwise</span><span class="p">()</span> <span class="o">%&gt;%</span>
@@ -550,13 +550,13 @@
   <span class="c1"># ---------------- #</span>
   <span class="c1"># get curr matchup #</span>
   <span class="c1"># ---------------- #</span>
-  <span class="n">curr_matchup</span> <span class="o">&lt;-</span> <span class="n">unique_matchups[i]</span>
+  <span class="n">curr_matchup</span> <span class="o">&lt;-</span> <span class="n">unique_matchups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
   <span class="n">curr_teams</span> <span class="o">&lt;-</span> <span class="nf">str_split</span><span class="p">(</span><span class="n">string</span>  <span class="o">=</span> <span class="n">curr_matchup</span><span class="p">,</span>
-                          <span class="n">pattern</span> <span class="o">=</span> <span class="s">&#39;\\|&#39;</span><span class="p">)</span><span class="n">[[1]]</span>
+                          <span class="n">pattern</span> <span class="o">=</span> <span class="s">&#39;\\|&#39;</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span>
 
-  <span class="n">curr_team_1</span> <span class="o">&lt;-</span> <span class="n">curr_teams[1]</span>
-  <span class="n">curr_team_2</span> <span class="o">&lt;-</span> <span class="n">curr_teams[2]</span>
+  <span class="n">curr_team_1</span> <span class="o">&lt;-</span> <span class="n">curr_teams</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+  <span class="n">curr_team_2</span> <span class="o">&lt;-</span> <span class="n">curr_teams</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 
   <span class="c1"># ------------------------------- #</span>
   <span class="c1"># simulate games for curr_matchup #</span>
@@ -615,8 +615,8 @@
 <span class="n">season_matchup_res_df</span> <span class="o">&lt;-</span> <span class="n">season_res_df</span> <span class="o">%&gt;%</span>
   <span class="nf">group_by</span><span class="p">(</span><span class="n">team_tuple</span><span class="p">)</span> <span class="o">%&gt;%</span>
   <span class="nf">summarise</span><span class="p">(</span><span class="n">n_games</span> <span class="o">=</span> <span class="nf">n</span><span class="p">(),</span>
-            <span class="n">team_1_wins</span>    <span class="o">=</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">.[.</span><span class="o">$</span><span class="n">team_tuple</span> <span class="o">==</span> <span class="n">team_tuple</span> <span class="o">&amp;</span> <span class="n">.$score_team_1</span> <span class="o">&gt;</span> <span class="n">.$score_team_2</span><span class="p">,</span> <span class="n">]</span><span class="p">),</span>
-            <span class="n">team_2_wins</span>    <span class="o">=</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">.[.</span><span class="o">$</span><span class="n">team_tuple</span> <span class="o">==</span> <span class="n">team_tuple</span> <span class="o">&amp;</span> <span class="n">.$score_team_1</span> <span class="o">&lt;</span> <span class="n">.$score_team_2</span><span class="p">,</span> <span class="n">]</span><span class="p">),</span>
+            <span class="n">team_1_wins</span>    <span class="o">=</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">.</span><span class="p">[</span><span class="n">.</span><span class="o">$</span><span class="n">team_tuple</span> <span class="o">==</span> <span class="n">team_tuple</span> <span class="o">&amp;</span> <span class="n">.</span><span class="o">$</span><span class="n">score_team_1</span> <span class="o">&gt;</span> <span class="n">.</span><span class="o">$</span><span class="n">score_team_2</span><span class="p">,</span> <span class="p">]),</span>
+            <span class="n">team_2_wins</span>    <span class="o">=</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">.</span><span class="p">[</span><span class="n">.</span><span class="o">$</span><span class="n">team_tuple</span> <span class="o">==</span> <span class="n">team_tuple</span> <span class="o">&amp;</span> <span class="n">.</span><span class="o">$</span><span class="n">score_team_1</span> <span class="o">&lt;</span> <span class="n">.</span><span class="o">$</span><span class="n">score_team_2</span><span class="p">,</span> <span class="p">]),</span>
             <span class="n">mean_n_innings</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">n_innings</span><span class="p">))</span> <span class="o">%&gt;%</span>
   <span class="nf">mutate</span><span class="p">(</span><span class="n">team_1_avg</span> <span class="o">=</span> <span class="n">team_1_wins</span> <span class="o">/</span> <span class="p">(</span><span class="n">team_1_wins</span> <span class="o">+</span> <span class="n">team_2_wins</span><span class="p">))</span> <span class="o">%&gt;%</span>
   <span class="nf">mutate</span><span class="p">(</span><span class="n">team_2_avg</span> <span class="o">=</span> <span class="n">team_2_wins</span> <span class="o">/</span> <span class="p">(</span><span class="n">team_1_wins</span> <span class="o">+</span> <span class="n">team_2_wins</span><span class="p">))</span>
@@ -626,9 +626,9 @@
   <span class="nf">mutate_if</span><span class="p">(</span><span class="n">is.factor</span><span class="p">,</span> <span class="n">as.character</span><span class="p">)</span> <span class="o">%&gt;%</span>
   <span class="nf">mutate</span><span class="p">(</span><span class="n">n_games</span> <span class="o">=</span> <span class="n">n_games</span> <span class="o">*</span> <span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">teams_list</span><span class="p">))</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span> <span class="o">%&gt;%</span>
   <span class="nf">rowwise</span><span class="p">()</span> <span class="o">%&gt;%</span>
-  <span class="nf">mutate</span><span class="p">(</span><span class="n">n_wins</span>   <span class="o">=</span> <span class="n">season_res_df</span><span class="nf">[</span><span class="p">(</span><span class="n">season_res_df</span><span class="o">$</span><span class="n">winner</span> <span class="o">==</span> <span class="n">team</span><span class="p">),</span> <span class="n">]</span> <span class="o">%&gt;%</span> <span class="nf">nrow</span><span class="p">(),</span>
+  <span class="nf">mutate</span><span class="p">(</span><span class="n">n_wins</span>   <span class="o">=</span> <span class="n">season_res_df</span><span class="p">[(</span><span class="n">season_res_df</span><span class="o">$</span><span class="n">winner</span> <span class="o">==</span> <span class="n">team</span><span class="p">),</span> <span class="p">]</span> <span class="o">%&gt;%</span> <span class="nf">nrow</span><span class="p">(),</span>
          <span class="n">win_rate</span> <span class="o">=</span> <span class="n">n_wins</span> <span class="o">/</span> <span class="n">n_games</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>And with the final runs of the seemingly never-ending Riddler Fall Classic tallied, we have the following:</p>
@@ -808,7 +808,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <span id="credits-theme" class="credits">&copy; 2019 Jordy Nelson</span>
+          <span id="credits-theme" class="credits">&copy; 2020 Jordy Nelson</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
           <div id="credits-social" class="credits">
