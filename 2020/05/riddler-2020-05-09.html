@@ -224,11 +224,12 @@ MathJax.Hub.Config({
 </blockquote>
 <p>With 7 dot options for each side of each domino tile, there are <span class="math">\(\frac{{7 \choose 1}}{{7 \choose 1} + {7 \choose 2}}\)</span> ways of drawing a double &ndash; or 25%, which intuitively makes sense given that there are 7 doubles out of 28 total tiles. </p>
 <p>For fun, let's simulate:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">seed</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">binom</span>
 <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">comb</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span><span class="p">,</span> <span class="n">chain</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
 <span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
@@ -302,9 +303,7 @@ MathJax.Hub.Config({
 <p>Intuitively, this immediately means that the probability of the other side of our tile also being a six (i.e., our tile being a double) is the same as the probability of drawing <em>any</em> double: 1/4. </p>
 <p>The joint probability </p>
 <div class="math">$$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$</div>
-<p> is the probability of drawing a </p>
-<div class="math">$$(6,6)$$</div>
-<p> tile -- or 1/28.</p>
+<p> is the probability of drawing a (6,6) tile &ndash; or 1/28.</p>
 <p>So we end up with:</p>
 <div class="math">$$P(A | B) = \frac{1/28}{P(1/7)} = 1/4$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
