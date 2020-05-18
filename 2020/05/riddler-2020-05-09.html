@@ -275,25 +275,38 @@ MathJax.Hub.Config({
 
 
 <p>Which gives us <code>0.25144</code>.</p>
-<p>If we first peek at one of the sides and notice a 6 after drawing a domino, there is 1 way for a 6 to be on the other side and <span class="math">\({6 \choose 1}\)</span> ways for it to be a number other than 6. In other words, <span class="math">\(\frac{{1 \choose 1}}{{6 \choose 1} + {1 \choose 2}}\)</span> &ndash; or about 14.3%. </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Q2</span>
-<span class="n">six_six</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100000</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">Dominoes</span><span class="p">(</span><span class="n">faces</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+<p>If we first peek at one of the sides and notice a 6 after drawing a domino, things get a bit trickier. </p>
+<p>Conditional probability tells us how to find the probability of some event of interest given some other event:</p>
+<div class="math">$$P(A | B) = \frac{P(A \cap B)}{P(B)}$$</div>
+<p>Or:</p>
+<div class="math">$$P({drawing \enspace a \enspace (6,6)} | {seeing \enspace a \enspace 6}) = \frac{P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})}{P({seeing \enspace a \enspace 6})}$$</div>
+<p>But how much information does peeking and seeing a six really give us?</p>
+<div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="n">Dominoes</span><span class="p">(</span><span class="n">faces</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
              <span class="n">sides</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">d</span><span class="o">.</span><span class="n">gen_dominoes</span><span class="p">()</span>
-<span class="n">dom_six</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">dominoes</span> <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">6</span> <span class="ow">or</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">6</span><span class="p">]</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">draw</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">dom_six</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">draw</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">draw</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="n">six_six</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># tally up frequencies of dot counts on faces (tile halves)</span>
+<span class="c1">#face_counts = Counter(y for x in d.dominoes for y in x)</span>
+<span class="n">face_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">dominoes</span><span class="p">))</span>
 
-<span class="n">six_six</span> <span class="o">/</span> <span class="n">n</span>
+<span class="c1"># faces with six dots</span>
+<span class="n">six_dot_faces</span> <span class="o">=</span> <span class="n">face_counts</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># proability of seeing a six</span>
+<span class="n">six_dot_faces</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">face_counts</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
 </code></pre></div>
 
 
-<p>Which gives us <code>0.14254</code>.</p>
+<p>Which gives us <code>0.14285714285714285</code> &ndash; or 1/7.</p>
+<p>So, in essence, peeking any seeing a six doesn't give us any important information (other than knowing that we're looking at a valid domino face).</p>
+<p>Intuitively, this immediately means that the probability of the other side of our tile also being a six (i.e., our tile being a double) is the same as the probability of drawing <em>any</em> double: 1/4. </p>
+<p>The joint probability </p>
+<div class="math">$$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$</div>
+<p> is the probability of drawing a </p>
+<div class="math">$$(6,6)$$</div>
+<p> tile -- or 1/28.</p>
+<p>So we end up with:</p>
+<div class="math">$$P(A | B) = \frac{1/28}{P(1/7)} = 1/4$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
