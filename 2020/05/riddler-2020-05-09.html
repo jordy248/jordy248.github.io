@@ -74,7 +74,8 @@
     <meta name="tags" content="R">
     <meta name="tags" content="probability">
     <meta name="tags" content="simulation">
-    <meta name="tags" content="binomial">
+    <meta name="tags" content="conditional probability">
+    <meta name="tags" content="joint probability">
 
 
 
@@ -96,7 +97,8 @@
 <meta property="article:tag" content="R"/>
 <meta property="article:tag" content="probability"/>
 <meta property="article:tag" content="simulation"/>
-<meta property="article:tag" content="binomial"/>
+<meta property="article:tag" content="conditional probability"/>
+<meta property="article:tag" content="joint probability"/>
 <meta property="og:image" content="../../theme/assets_images/tatiana-rodriguez-XEn-Pvif5Q0-unsplash.jpg">
 
 <!-- Twitter Card -->
@@ -222,7 +224,7 @@ MathJax.Hub.Config({
 <p>Question 1: What is the probability of drawing a "double" from a set of dominoes &ndash; that is, a tile with the same number on both sides?</p>
 <p>Question 2: Now you pick a random tile from the set and uncover only one side, revealing that it has six dots. What’s the probability that this tile is a double, with six on both sides?</p>
 </blockquote>
-<p>With 7 dot options for each side of each domino tile, there are <span class="math">\(\frac{{7 \choose 1}}{{7 \choose 1} + {7 \choose 2}}\)</span> ways of drawing a double &ndash; or 25%, which intuitively makes sense given that there are 7 doubles out of 28 total tiles. </p>
+<p>With 7 dot options for each face (each half) of each domino tile, there are <span class="math">\(\frac{{7 \choose 1}}{{7 \choose 1} + {7 \choose 2}}\)</span> ways of drawing a double &ndash; or 25%, which intuitively makes sense given that there are 7 doubles out of 28 total tiles. </p>
 <p>For fun, let's simulate:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">seed</span>
@@ -277,11 +279,12 @@ MathJax.Hub.Config({
 
 <p>Which gives us <code>0.25144</code>.</p>
 <p>If we first peek at one of the sides and notice a 6 after drawing a domino, things get a bit trickier. </p>
-<p>Conditional probability tells us how to find the probability of some event of interest given some other event:</p>
+<p>Conditional probability tells us how to find the probability of some event of interest (that we don't know the probability of) given some other event (that we do know the probability of):</p>
 <div class="math">$$P(A | B) = \frac{P(A \cap B)}{P(B)}$$</div>
 <p>Or:</p>
 <div class="math">$$P({drawing \enspace a \enspace (6,6)} | {seeing \enspace a \enspace 6}) = \frac{P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})}{P({seeing \enspace a \enspace 6})}$$</div>
 <p>But how much information does peeking and seeing a six really give us?</p>
+<p>Let's quickly investigate the probability of looking at a random face and seeing a six.</p>
 <div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="n">Dominoes</span><span class="p">(</span><span class="n">faces</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
              <span class="n">sides</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">d</span><span class="o">.</span><span class="n">gen_dominoes</span><span class="p">()</span>
@@ -299,13 +302,15 @@ MathJax.Hub.Config({
 
 
 <p>Which gives us <code>0.14285714285714285</code> &ndash; or 1/7.</p>
-<p>So, in essence, peeking any seeing a six doesn't give us any important information (other than knowing that we're looking at a valid domino face).</p>
+<p>Peeking and seeing a six doesn't give us any important information (other than knowing that we're looking at a valid domino face).</p>
 <p>Intuitively, this immediately means that the probability of the other side of our tile also being a six (i.e., our tile being a double) is the same as the probability of drawing <em>any</em> double: 1/4. </p>
-<p>The joint probability </p>
+<p>We can confirm this by computing the joint probability </p>
 <div class="math">$$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$</div>
-<p> is the probability of drawing a (6,6) tile &ndash; or 1/28.</p>
+<p> and plugging and chugging in our conditional probability formulation.</p>
+<div class="math">$$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$</div>
+<p> is simply the probability of drawing the (6,6) tile &ndash; which is 1/28.</p>
 <p>So we end up with:</p>
-<div class="math">$$P(A | B) = \frac{1/28}{P(1/7)} = 1/4$$</div>
+<div class="math">$$P({drawing \enspace a \enspace (6,6)} | {seeing \enspace a \enspace 6}) = \frac{1/28}{P(1/7)} = 1/4$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -385,7 +390,7 @@ MathJax.Hub.Config({
                 </div>
 
                 <aside class="post-tags">
-<a href="../../tag/fivethirtyeight">FiveThirtyEight</a><a href="../../tag/riddler">Riddler</a><a href="../../tag/r">R</a><a href="../../tag/probability">probability</a><a href="../../tag/simulation">simulation</a><a href="../../tag/binomial">binomial</a>                </aside>
+<a href="../../tag/fivethirtyeight">FiveThirtyEight</a><a href="../../tag/riddler">Riddler</a><a href="../../tag/r">R</a><a href="../../tag/probability">probability</a><a href="../../tag/simulation">simulation</a><a href="../../tag/conditional-probability">conditional probability</a><a href="../../tag/joint-probability">joint probability</a>                </aside>
 
                 <div class="clear"></div>
 
