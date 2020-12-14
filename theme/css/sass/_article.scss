@@ -171,14 +171,24 @@
     text-align: left;
 
     a {
-        color: inherit;
-        text-decoration: none;
-        @include mxn-link-animation(inherit, $color-red, $color-darkgray);
+        &:not(.an-link) {
+            background: $color-lightgray;
+            color: inherit;
+            text-decoration: underline;
+
+            &:hover,
+            &:focus {
+                color: $color-rust;
+            }
+        }
         
-        &:hover,
-        &:focus {
-            text-decoration: none;
-            color: $color-rust;
+        .an-link {
+            @include mxn-link-animation(inherit, $color-red, $color-darkgray);
+            &:hover,
+            &:focus {
+                text-decoration: none;
+                color: $color-rust;
+            }
         }
     }
 
@@ -630,25 +640,25 @@
 ### ---------------------------- ###
 */
 
-/* 
-### ---------- ###
-### begin math ###
-### ---------- ###
+/*
+### -------------------------------- ###
+### begin simple_footnotes overrides ###
+### -------------------------------- ###
 */
-
-.mathjax-scale {
-    display: inline-block;
-    max-width: 100%;
-    /*font-size: 1em !important;*/
-
-    * {
+a.simple-footnote[href^="#sf"] {
+    border-bottom: 0px !important;
+  
+    &:before {
+      border-bottom: 0px !important;
     }
-}
-
-/* 
-### -------- ###
-### end math ###
-### -------- ###
+    &:after {
+      border-bottom: 0px !important;
+    }
+  }
+/*
+### ------------------------------ ###
+### end simple_footnotes overrides ###
+### ------------------------------ ###
 */
 
 /*
