@@ -37,7 +37,7 @@
     "uglifyjs": "^2.4.11"
   },
   "devDependencies": {
-    "axios": ">=0.21.1",
+    "axios": ">=0.21.2",
     "concurrently": "^4.1.0",
     "fstream": ">=1.0.12",
     "gulp": "^4.0.2",
