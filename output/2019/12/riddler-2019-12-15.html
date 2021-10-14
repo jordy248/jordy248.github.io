@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <!-- ##### gtm ##### -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJN5JZ6');</script>
+    <!-- End Google Tag Manager -->
+
+  <title>2019-12-15 Riddler</title>
+
+
+  <link rel="icon" href="theme/assets_images/favicon_jn.png" sizes="32x32" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="../../" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="../../theme/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+
+  <!-- Code highlight color scheme -->
+  <link href="../../theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     "HTML-CSS": {linebreaks: {automatic: true},
+                  scale: 66
+                 },
+      SVG: {linebreaks: {automatic: true} },
+      CommonHTML: {scale: 66}
+    });
+    </script>
+
+  <!-- CSS specified by the user -->
+
+
+  <link href="../../theme/css/normalize.css" type="text/css" rel="stylesheet" />
+
+
+  <link href="../../theme/css/main.css" type="text/css" rel="stylesheet" />
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="../../2019/12/riddler-2019-12-15.html" rel="canonical" />
+
+    <meta name="description" content="Choose 'K' (Karpov or Kasparov)">
+
+    <meta name="author" content="Jordy Nelson">
+
+    <meta name="tags" content="FiveThirtyEight">
+    <meta name="tags" content="Riddler">
+    <meta name="tags" content="R">
+    <meta name="tags" content="probability">
+    <meta name="tags" content="simulation">
+    <meta name="tags" content="binomial">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Jordy Nelson"/>
+<meta property="og:title" content="2019-12-15 Riddler"/>
+<meta property="og:description" content="Choose 'K' (Karpov or Kasparov)"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../2019/12/riddler-2019-12-15.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-12-15 16:33:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../author/jordy-nelson">
+  <meta property="article:publisher" content="https://www.facebook.com/jordy.nelson248" />
+<meta property="article:section" content="Riddler"/>
+<meta property="article:tag" content="FiveThirtyEight"/>
+<meta property="article:tag" content="Riddler"/>
+<meta property="article:tag" content="R"/>
+<meta property="article:tag" content="probability"/>
+<meta property="article:tag" content="simulation"/>
+<meta property="article:tag" content="binomial"/>
+<meta property="og:image" content="../../theme/assets_images/randy-fath-dELtyCFlNG0-unsplash.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "2019-12-15 Riddler",
+  "headline": "2019-12-15 Riddler",
+  "datePublished": "2019-12-15 16:33:00-05:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Jordy Nelson",
+    "url": "../../author/jordy-nelson"
+  },
+  "image": "../../theme/assets_images/randy-fath-dELtyCFlNG0-unsplash.jpg",
+  "url": "../../2019/12/riddler-2019-12-15.html",
+  "description": "Choose 'K' (Karpov or Kasparov)"
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+
+<body class="home-template loading">
+  <div class="spinner">
+    <div class="sk-wandering-cubes">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+    </div>
+  </div>
+
+  <!-- ##### gtm ##### -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJN5JZ6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <div class="nav-label">
+        <div class="nav-home">
+          <a class="nav-home-link" href="../../">
+            <div class="nav-home-link-icon"></div>
+          </a>
+        </div>
+      </div>
+    <ul>
+          <li role="presentation" class="">
+            <a href ="/index.html">
+              home
+            </a>
+          </li>
+          <li role="presentation" class="">
+            <a href ="/pages/about.html">
+              about
+            </a>
+          </li>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+          <!--
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="../../" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          -->
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">2019-12-15 Riddler</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="../../author/jordy-nelson">Jordy Nelson</a>
+            | <time datetime="15 Dec 2019">15 Dec 2019</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('../../theme/assets_images/randy-fath-dELtyCFlNG0-unsplash.jpg')">
+      </div>
+    </header>
+    <!-- ##### begin cover photo credits ##### -->
+    <div class="cover-credits">
+      <div class="inner">
+        <span>
+          Randy Fath/Unsplash
+        </span>
+      </div>
+    </div>
+    <!-- ##### end cover photo credits ##### -->
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+ "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+
+<p>The newest <a href="https://fivethirtyeight.com/features/can-you-solve-a-particularly-prismatic-puzzle/">Riddler Express</a> is a probability puzzler that asks us to "choose K" (Karpov or Kasparov!) in one of chess's great matches.</p>
+<blockquote>
+<p>From Anna Engelsone comes a riddle about a historic chess battle:</p>
+<p>The infamous 1984 World Chess Championship match between the reigning world champion Anatoly Karpov and 21-year-old Garry Kasparov was supposed to have been played until either player had won six games. Instead, it went on for 48 games: Karpov won five, Kasparov won 3, and the other 40 games each ended in a draw. Alas, the match was controversially terminated without a winner.</p>
+<p>We can deduce from the games Karpov and Kasparov played that, independently of other games, Karpov’s chances of winning each game were 5/48, Kasparov’s chances were 3/48, and the chances of a draw were 40/48. Had the match been allowed to continue indefinitely, what would have been Kasparov’s chances of eventually winning the match?</p>
+</blockquote>
+<p>Draws don't give us any additional information on the slog to a winner, so let's go ahead and ignore them, leaving us with these new probabilities:</p>
+<p>Karpov: <span class="math">\(\frac{5}{8}\)</span>
+<br />
+Kasparov: <span class="math">\(\frac{3}{8}\)</span></p>
+<p>And because Karpov has already won five games on his way to six, Kasparov needs to win 3 in a row (before Karpov wins one more) to claim his own victory. </p>
+<p>This then becomes a question for the binomial distribution. The binomial distribution takes the parameters <span class="math">\(n\)</span> and <span class="math">\(p\)</span> and the form <span class="math">\(X \sim Bin(n,p) = {n \choose k} * p^k * (1-p)^{(n-k)}\)</span> (where <span class="math">\(n\)</span> is the number of trials, <span class="math">\(p\)</span> is the probability of the event occurring, and <span class="math">\(k\)</span> is the number of times we want the event to occur).</p>
+<p>In Kasparov's case, this becomes: <span class="math">\({3 \choose 3} * (\frac{3}{8})^3 * (1-\frac{3}{8})^{(3-3)}\)</span>. This is the same as <span class="math">\(\frac{3}{8}^3 = \frac{27}{512}\)</span>. Or 0.05273438.</p>
+<p>And as always, we can simulate with R:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">##### ----------------- #####</span>
+<span class="c1">##### ----------------- #####</span>
+<span class="c1">##### clean environment #####</span>
+<span class="c1">##### ----------------- #####</span>
+<span class="c1">##### ----------------- #####</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="nf">ls</span><span class="p">())</span>
+<span class="nf">gc</span><span class="p">()</span>
+
+<span class="c1">##### ------------- #####</span>
+<span class="c1">##### ------------- #####</span>
+<span class="c1">##### load packages #####</span>
+<span class="c1">##### ------------- #####</span>
+<span class="c1">##### ------------- #####</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">progress</span><span class="p">)</span>
+
+<span class="c1">##### ------- #####</span>
+<span class="c1">##### ------- #####</span>
+<span class="c1">##### configs #####</span>
+<span class="c1">##### ------- #####</span>
+<span class="c1">##### ------- #####</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">42</span><span class="p">)</span>
+
+<span class="n">n_sim</span>   <span class="o">&lt;-</span> <span class="m">1e5</span>
+
+<span class="n">matchup</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="s">&#39;karpov&#39;</span>   <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="s">&#39;prob&#39;</span> <span class="o">=</span> <span class="m">5</span><span class="o">/</span><span class="m">48</span><span class="p">,</span>
+                                  <span class="s">&#39;outs&#39;</span> <span class="o">=</span> <span class="m">5</span><span class="p">),</span>
+                <span class="s">&#39;kasparov&#39;</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="s">&#39;prob&#39;</span> <span class="o">=</span> <span class="m">3</span><span class="o">/</span><span class="m">48</span><span class="p">,</span>
+                                  <span class="s">&#39;outs&#39;</span> <span class="o">=</span> <span class="m">3</span><span class="p">),</span>
+                <span class="s">&#39;draw&#39;</span>     <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="s">&#39;prob&#39;</span> <span class="o">=</span> <span class="m">40</span><span class="o">/</span><span class="m">48</span><span class="p">,</span>
+                                  <span class="s">&#39;outs&#39;</span> <span class="o">=</span> <span class="m">0</span><span class="p">))</span>
+
+<span class="c1">##### -------- #####</span>
+<span class="c1">##### -------- #####</span>
+<span class="c1">##### def funs #####</span>
+<span class="c1">##### -------- #####</span>
+<span class="c1">##### -------- #####</span>
+
+<span class="c1">### -------------------------------------- ###</span>
+<span class="c1">### def game() fun to simulate single game ###</span>
+<span class="c1">### -------------------------------------- ###</span>
+<span class="n">game</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">matchup</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">res</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span>       <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">matchup</span><span class="p">),</span>
+                  <span class="n">size</span>    <span class="o">=</span> <span class="m">1</span><span class="p">,</span>
+                  <span class="n">replace</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span>
+                  <span class="n">prob</span>    <span class="o">=</span> <span class="nf">unlist</span><span class="p">(</span><span class="n">matchup</span><span class="p">)[</span><span class="nf">grepl</span><span class="p">(</span><span class="s">&#39;prob&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">matchup</span><span class="p">)))])</span>
+
+    <span class="nf">return</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">### ------------------------------------------- ###</span>
+<span class="c1">### def match() fun to simulate match to 6 wins ###</span>
+<span class="c1">### ------------------------------------------- ###</span>
+<span class="n">match</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">matchup</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">curr_matchup</span> <span class="o">&lt;-</span> <span class="n">matchup</span>
+
+    <span class="nf">while</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)[</span><span class="nf">grepl</span><span class="p">(</span><span class="s">&#39;(karpov|kasparov)\\.outs&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)))]</span> <span class="o">==</span> <span class="m">6</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">game_out</span> <span class="o">&lt;-</span> <span class="nf">game</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)</span>
+
+        <span class="n">curr_matchup</span><span class="p">[[</span><span class="n">game_out</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span> <span class="o">&lt;-</span> <span class="n">curr_matchup</span><span class="p">[[</span><span class="n">game_out</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span> <span class="o">+</span> <span class="m">1</span>
+    <span class="p">}</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">curr_matchup</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">##### ---------------- #####</span>
+<span class="c1">##### ---------------- #####</span>
+<span class="c1">##### simulate matches #####</span>
+<span class="c1">##### ---------------- #####</span>
+<span class="c1">##### ---------------- #####</span>
+
+<span class="c1">### ----------------- ###</span>
+<span class="c1">### init progress bar ###</span>
+<span class="c1">### ----------------- ###</span>
+<span class="n">pb</span> <span class="o">&lt;-</span> <span class="n">progress_bar</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span>
+    <span class="n">format</span> <span class="o">=</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&#39;simulating matches...&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;(:spin) [:bar] :percent eta: :eta&#39;</span><span class="p">),</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">n_sim</span><span class="p">,</span> <span class="n">clear</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">100</span><span class="p">)</span>
+
+<span class="c1">### ------------------------ ###</span>
+<span class="c1">### init vec to hold winners ###</span>
+<span class="c1">### ------------------------ ###</span>
+<span class="n">winner</span>       <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">()</span>
+<span class="n">games_played</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">()</span>
+
+<span class="c1">### -------- ###</span>
+<span class="c1">### simulate ###</span>
+<span class="c1">### -------- ###</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n_sim</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">match_out</span> <span class="o">&lt;-</span> <span class="nf">match</span><span class="p">(</span><span class="n">matchup</span><span class="p">)</span>
+
+    <span class="n">karpov_out</span>   <span class="o">&lt;-</span> <span class="n">match_out</span><span class="p">[[</span><span class="s">&#39;karpov&#39;</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span>
+    <span class="n">kasparov_out</span> <span class="o">&lt;-</span> <span class="n">match_out</span><span class="p">[[</span><span class="s">&#39;kasparov&#39;</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span> 
+    <span class="n">draws_out</span>    <span class="o">&lt;-</span> <span class="n">match_out</span><span class="p">[[</span><span class="s">&#39;draw&#39;</span><span class="p">]][[</span><span class="s">&#39;outs&#39;</span><span class="p">]]</span>
+
+    <span class="n">n_games</span>      <span class="o">&lt;-</span> <span class="n">karpov_out</span> <span class="o">+</span> <span class="n">kasparov_out</span> <span class="o">+</span> <span class="n">draws_out</span>
+
+    <span class="nf">if</span><span class="p">(</span><span class="n">karpov_out</span> <span class="o">&gt;</span> <span class="n">kasparov_out</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">winner</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">winner</span><span class="p">,</span> <span class="s">&#39;karpov&#39;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="n">winner</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">winner</span><span class="p">,</span> <span class="s">&#39;kasparov&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">games_played</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">games_played</span><span class="p">,</span> <span class="n">n_games</span><span class="p">)</span>
+
+    <span class="n">pb</span><span class="o">$</span><span class="nf">tick</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1">### ------------------------ ###</span>
+<span class="c1">### prob of kasparov winning ###</span>
+<span class="c1">### ------------------------ ###</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">winner</span><span class="p">[</span><span class="n">winner</span> <span class="o">==</span> <span class="s">&#39;kasparov&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">winner</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Which gives us: 0.05315</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=2019-12-15 Riddler&amp;url=../../2019/12/riddler-2019-12-15.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=../../2019/12/riddler-2019-12-15.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=../../2019/12/riddler-2019-12-15.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="../../tag/fivethirtyeight">FiveThirtyEight</a><a href="../../tag/riddler">Riddler</a><a href="../../tag/r">R</a><a href="../../tag/probability">probability</a><a href="../../tag/simulation">simulation</a><a href="../../tag/binomial">binomial</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <!-- ##### begin disqus comments ##### -->
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                
+                /**/
+                var disqus_config = function () {
+                this.page.url = '../../2019/12/riddler-2019-12-15.html';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = '2019/12/riddler-2019-12-15.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                /**/
+
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://jordynelson.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                <section class="post-comments">
+                      <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="2019/12/riddler-2019-12-15.html" >Show Comments</a>
+                  <div id="disqus_thread"></div>
+                </section>
+                <!-- ##### end disqus comments ##### -->
+
+                <!-- ##### begin neighbors prev and next articles ##### -->
+                <aside class="post-nav">
+                    <a class="post-nav-next" href="../../2020/05/riddler-2020-05-09.html">
+                        <section class="post-nav-teaser" style="background: url(../../theme/assets_images/tatiana-rodriguez-XEn-Pvif5Q0-unsplash.jpg); background-size: cover; background-repeat: no-repeat;">
+                            <i class="ic ic-arrow-left"></i>
+                            <div class="post-nav-text">
+                              <h2 class="post-nav-title">2020-05-09 Riddler</h2>
+                              <p class="post-nav-excerpt">Six marks the dot.</p>
+                            </div>
+                        </section>
+                    </a>
+                    <a class="post-nav-prev" href="../../2019/10/riddler-2019-10-04.html">
+                        <section class="post-nav-teaser" style="background: url(../../theme/assets_images/NeONBRAND-dollar-unsplash.jpg); background-size: cover; background-repeat: no-repeat;">
+                            <i class="ic ic-arrow-right"></i>
+                            <div class="post-nav-text">
+                              <h2 class="post-nav-title">2019-10-04 Riddler</h2>
+                              <p class="post-nav-excerpt">Should we lock in our answer for $1MM?</p>
+                            </div>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+                <!-- ##### begin neighbors prev and next articles ##### -->
+
+            </div>
+        </article>
+    </main>
+    
+  <!-- ##### begin disqus comment count script ##### -->
+  <script id="dsq-count-scr" src="//jordynelson.disqus.com/count.js" async></script>
+  <!-- ##### end disqus comment count script ##### -->    
+    <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-software" class="credits">Published with <a class="an-link" href="https://github.com/getpelican/pelican"
+              rel="nofollow">Pelican</a></span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-locale" class="credits"><a class="an-link" href="http://madewithloveinbaltimore.org/" title="Made with ♥ in Baltimore">Made
+              with <i class="icon fa fa-heart"></i> in Baltimore</a></span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-theme" class="credits">Theme <a class="an-link" href="https://github.com/jordy248/jordy248"
+              rel="nofollow">Martian</a></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-theme" class="credits">&copy; 2021 Jordy Nelson</span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <div id="credits-social" class="credits">
+            <span id="credits-social-linkedin" class="icon"><a href="https://www.linkedin.com/in/jordynelson/"><i class="fab fa-linkedin"></i></a></span>
+            <span id="credits-social-github" class="icon"><a href="htts://github.com/jordy248"><i class="fab fa-github"></i></a></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="../../theme/js/script.js"></script>
+
+  <!-- Script specified by the user -->
+  <script type="text/javascript" src="../../theme/js/script.js"></script>
+  <script type="text/javascript" src="../../theme/js/myscript.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78411303-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-78411303-1', { 'anonymize_ip': true });
+    </script>
+</body>
+
+</html>

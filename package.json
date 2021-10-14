@@ -1,0 +1,57 @@
+{
+  "name": "jordy248",
+  "version": "1.0.0",
+  "description": "package.json for jordy248 pelican site",
+  "private": "true",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "gulp buildCss",
+    "compile-sass": "node-sass ./themes/martian/static/css/sass/main.scss ./themes/martian/static/css/main.css --source-map=true",
+    "compile-pelican": "rm output -r && poetry run pelican && robocopy \".\" \".\\output\" \"robots.txt\"",
+    "get-pelican-plugins": "gh repo clone getpelican/pelican-plugins",
+    "run-lite-server": "lite-server --config=./bs-config.json",
+    "run-python-server": "cd output && poetry run python -m http.server",
+    "compile-dev": "npm run compile-sass && npm run compile-pelican && npm run run-python-server",
+    "copy-live": "Xcopy \"./output\" \"../jordy248.github.io\" /f /e /y"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordy248/jordy248.git"
+  },
+  "keywords": [
+    "jordy248",
+    "pelican",
+    "site"
+  ],
+  "author": "jordy nelson <jordynelson.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordy248/jordy248/issues"
+  },
+  "homepage": "https://github.com/jordy248/jordy248#readme",
+  "dependencies": {
+    "http": "0.0.0",
+    "mkdirp": "^0.5.1",
+    "sass": "^1.26.5",
+    "uglifyjs": "^2.4.11"
+  },
+  "devDependencies": {
+    "axios": ">=0.21.1",
+    "concurrently": "^4.1.0",
+    "fstream": ">=1.0.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.1.0",
+    "js-yaml": ">=3.13.1",
+    "lite-server": "^2.6.1",
+    "lodash": "^4.17.20",
+    "lodash.mergewith": ">=4.6.2",
+    "mixin-deep": ">=1.3.2",
+    "mocha": "^7.1.2",
+    "node-sass": "^4.14.1",
+    "set-value": ">=2.0.1",
+    "spinkit": "^1.2.5",
+    "tar": ">=2.2.2"
+  }
+}

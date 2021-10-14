@@ -1,0 +1,32 @@
+// main.scss
+
+/*
+    Name: martian-pelican
+	Date: 2019-02-25
+	Description: A Pelican theme 
+	Version: 1.0
+	License: MIT <http://opensource.org/licenses/MIT>
+	Original author: Jordy Nelson <jordynelson.io>
+*/
+
+/*
+### ------------- ###
+### begin imports ###
+### ------------- ###
+*/
+@import 'normalize/normalize';
+@import 'variables';
+@import 'mixins';
+@import 'boilerplate';
+@import 'nav';
+@import 'hero';
+@import 'footer';
+@import 'pagination';
+@import 'article';
+@import 'about';
+
+/*
+### ----------- ###
+### end imports ###
+### ----------- ###
+*/

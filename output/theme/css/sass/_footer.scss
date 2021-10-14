@@ -1,0 +1,88 @@
+// _footer.scss
+
+#footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    z-index: 20;
+    font-family: $font-family-body;
+    font-size: 18px;
+    line-height: 1.5em;
+    padding-top: 1.5em;
+    padding-bottom: 10em;
+    background: $color-rust;
+    color: $color-lightgray;
+
+    a {
+        color: $color-lightgray;
+        text-decoration: none;
+    }
+
+    .an-link {
+        @include mxn-link-animation($color-lightgray, $color-lightgray, $color-navy);
+    }
+
+    .credits {
+        display: block;
+        text-align: center;
+        font-size: 1em;
+        line-height: 1.5em;
+        padding: 1.1em 0;
+        overflow: auto;
+        opacity: 0.5;
+
+        span {
+            display: inline-block;
+        }
+        
+        a {
+            flex: 1;
+            color: $color-navy;
+        }
+
+        .icon {
+            margin: 0px 5px;
+
+            a {
+                transition: 333ms all ease;
+            }
+
+            &:hover {
+                a {
+                    color: $color-lightgray;
+                }
+            }
+        }
+    }
+}
+
+#credits-locale {
+    a {
+        .icon {
+            color: $color-navy !important;
+        }
+    }
+}
+
+#credits-social {
+    .icon {
+        transition: 333ms all ease;
+        font-size: 2em;
+
+        a {
+            i {
+                font-size: 1.5em;
+                transition: 333ms all ease;
+            }
+        }
+
+        &:hover {
+            a {
+                i {
+                    color: $color-lightgray;
+                }
+            }
+        }
+    }
+}

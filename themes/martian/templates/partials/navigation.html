@@ -1,0 +1,49 @@
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <div class="nav-label">
+      {% if SITE_LOGO %}
+        <span class="blog-logo">
+            <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Blog Logo" /></a>
+        </span>
+      {% else %}
+        <div class="nav-home">
+          <a class="nav-home-link" href="{{ SITEURL }}/">
+            <div class="nav-home-link-icon"></div>
+          </a>
+        </div>
+      {% endif %}
+      </div>
+    <ul>
+      {% for title, link in MENUITEMS %}
+          <li role="presentation" class="{% if link|replace('/', '') == output_file|replace('/', '') %}active{% endif %}">
+            {% if link|replace('/', '') == output_file|replace('/', '') %}
+              <span>
+                {{ title }}
+              </span>
+            {% else %}
+            <a href ="{{ link }}">
+              {{ title }}
+            </a>
+            {% endif %}
+          </li>
+      {% endfor %}
+
+      {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in pages %}
+              <li{% if p == page %} class="nav-{{p.slug}} active"{% endif %} role="presentation"><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+          {% endfor %}
+      {% else %}
+          {% if DISPLAY_CATEGORIES_ON_MENU %}
+              {% for cat, null in categories %}
+                  <li{% if cat == category %} class="nav-{{cat.slug}} active"{% endif %} role="presentation"><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+              {% endfor %}
+          {% endif %}
+      {% endif %}
+
+      {% for name, link in SOCIAL if name in ['rss', 'rss-square', 'feed'] %}
+        <li class="nav-rss"><a href="{{ link }}"><i class="ic ic-rss"></i> Subscribe</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

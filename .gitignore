@@ -1,0 +1,29 @@
+
+
+### ---- ###
+### dirs ###
+### ---- ###
+node_modules/
+.vscode/
+venv/
+
+### ---------- ###
+### python env ###
+### ---------- ###
+__pycache__/
+
+### ----- ###
+### r env ###
+### ----- ###
+*.REnviron
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Ruserdata
+global.R
+local.R
+
+### ---- ###
+### logs ###
+### ---- ###
+log.txt

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <!-- ##### gtm ##### -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJN5JZ6');</script>
+    <!-- End Google Tag Manager -->
+
+  <title>2019-10-04 Riddler</title>
+
+
+  <link rel="icon" href="theme/assets_images/favicon_jn.png" sizes="32x32" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="../../" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="../../theme/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+
+  <!-- Code highlight color scheme -->
+  <link href="../../theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     "HTML-CSS": {linebreaks: {automatic: true},
+                  scale: 66
+                 },
+      SVG: {linebreaks: {automatic: true} },
+      CommonHTML: {scale: 66}
+    });
+    </script>
+
+  <!-- CSS specified by the user -->
+
+
+  <link href="../../theme/css/normalize.css" type="text/css" rel="stylesheet" />
+
+
+  <link href="../../theme/css/main.css" type="text/css" rel="stylesheet" />
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="../../2019/10/riddler-2019-10-04.html" rel="canonical" />
+
+    <meta name="description" content="Should we lock in our answer for $1MM?">
+
+    <meta name="author" content="Jordy Nelson">
+
+    <meta name="tags" content="FiveThirtyEight">
+    <meta name="tags" content="Riddler">
+    <meta name="tags" content="R">
+    <meta name="tags" content="probability">
+    <meta name="tags" content="conditional probability">
+    <meta name="tags" content="bayes">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Jordy Nelson"/>
+<meta property="og:title" content="2019-10-04 Riddler"/>
+<meta property="og:description" content="Should we lock in our answer for $1MM?"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../2019/10/riddler-2019-10-04.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-10-06 19:36:00-04:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../author/jordy-nelson">
+  <meta property="article:publisher" content="https://www.facebook.com/jordy.nelson248" />
+<meta property="article:section" content="Riddler"/>
+<meta property="article:tag" content="FiveThirtyEight"/>
+<meta property="article:tag" content="Riddler"/>
+<meta property="article:tag" content="R"/>
+<meta property="article:tag" content="probability"/>
+<meta property="article:tag" content="conditional probability"/>
+<meta property="article:tag" content="bayes"/>
+<meta property="og:image" content="../../theme/assets_images/NeONBRAND-dollar-unsplash.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "2019-10-04 Riddler",
+  "headline": "2019-10-04 Riddler",
+  "datePublished": "2019-10-06 19:36:00-04:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Jordy Nelson",
+    "url": "../../author/jordy-nelson"
+  },
+  "image": "../../theme/assets_images/NeONBRAND-dollar-unsplash.jpg",
+  "url": "../../2019/10/riddler-2019-10-04.html",
+  "description": "Should we lock in our answer for $1MM?"
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+
+<body class="home-template loading">
+  <div class="spinner">
+    <div class="sk-wandering-cubes">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+    </div>
+  </div>
+
+  <!-- ##### gtm ##### -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJN5JZ6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <div class="nav-label">
+        <div class="nav-home">
+          <a class="nav-home-link" href="../../">
+            <div class="nav-home-link-icon"></div>
+          </a>
+        </div>
+      </div>
+    <ul>
+          <li role="presentation" class="">
+            <a href ="/index.html">
+              home
+            </a>
+          </li>
+          <li role="presentation" class="">
+            <a href ="/pages/about.html">
+              about
+            </a>
+          </li>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+          <!--
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="../../" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          -->
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">2019-10-04 Riddler</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="../../author/jordy-nelson">Jordy Nelson</a>
+            | <time datetime="06 Oct 2019">06 Oct 2019</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('../../theme/assets_images/NeONBRAND-dollar-unsplash.jpg')">
+      </div>
+    </header>
+    <!-- ##### begin cover photo credits ##### -->
+    <div class="cover-credits">
+      <div class="inner">
+        <span>
+          Gary NeONBRAND/Unsplash
+        </span>
+      </div>
+    </div>
+    <!-- ##### end cover photo credits ##### -->
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+ "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+
+<p>The most recent <a href="https://fivethirtyeight.com/features/who-wants-to-be-a-riddler-millionaire/">Riddler Express</a> puts you in the hot seat for a gameshow-themed conditional probability adventure -- all without even mentioning Monty Hall or goats!</p>
+<blockquote>
+<p>From Thomas Sneller comes a puzzle that brings us back to the game show to end all game shows, “Who Wants to Be a Riddler Millionaire?” As you’ll remember, for each question you must pick the correct option from four choices.</p>
+<p>You’ve made it to the $1 million question, but it’s a tough one. Out of the four choices, A, B, C and D, you’re 70 percent sure the answer is B, and none of the remaining choices looks more plausible than another. You decide to use your final lifeline, the 50:50, which leaves you with two possible answers, one of them correct. Lo and behold, B remains an option! How confident are you now that B is the correct answer?</p>
+</blockquote>
+<p>Let's first summarize the probabilities and values of success (as success is in the eye of the batter) for each team:</p>
+<p>If we begin by allocating 70% of our credibility to B and evenly distribute the remaining 30% among the remaining 3 answers (A, C, and D), it's tempting to believe that elimating two of the remaining 3 options means that their share of the 30% of our credibility all flows to answer B, bumping it to 90%.</p>
+<p>But is there a better way to reallocate our credibility in light of our 50:50?</p>
+<p>There is if we apply Bayes' Theorem! It gives us a mechanism for updating our prior beliefs (expressed in terms of probabilities or credibilities) in light of additional information.</p>
+<p>Bayes' Theorem takes the general form: <span class="math">\(P(A|B)=\frac{P(B|A)P(A)}{P(B)}\)</span></p>
+<p>In other words, the conditional probability of event A given event B is equal to the conditional probability of event B given event A multiplied by the independent (or marginal) probability of event A all divided by the marginal probability of event B.</p>
+<p>In our case, this means: </p>
+<div class="mathjax-scale">$$P(\text{B is the answer}|\text{50:50 returns B})=$$</div>
+
+<div class="mathjax-scale">$$\frac{P(\text{50:50 returns B}|\text{B is the answer})P(\text{B is the answer})}{P(\text{50:50 returns B})}$$</div>
+
+<p>Let's break this down a bit:</p>
+<ul>
+<li><div class="mathjax-scale"><span class="math">\(P(\text{B is the answer}|\text{50:50 returns B})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(A|B)\)</span></div> -- is the unknown conditional probability we are trying to solve for.</li>
+<li><div class="mathjax-scale"><span class="math">\(P(\text{50:50 returns B}|\text{B is the answer})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(B|A)\)</span></div> -- is equal to 100% because if B is the answer, 50:50 necessarily leaves it (as well as one other answer that we don't care about specifically).</li>
+<li><div class="mathjax-scale"><span class="math">\(P(\text{B is the answer})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(A)\)</span></div> -- is the event we assign 70% marginal credibility to from the outset.</li>
+<li><div class="mathjax-scale"><span class="math">\(P(\text{50:50 returns B})\)</span></div> -- or <div class="mathjax-scale"><span class="math">\(P(B)\)</span></div> -- can be assigned 79% credibility.<ul>
+<li>There are two cases in which B can remain after the 50:50, and we need to account for both of them:<ul>
+<li>B can remain after the 50:50 <strong>if B is correct</strong>:<ul>
+<li>The probability of this is the probability that B is correct (<span class="math">\(P(A)=70\%\)</span>) times the probability that B remains after the 50:50 given that B is correct (<span class="math">\(P(B|A)=100\%\)</span>)</li>
+</ul>
+</li>
+<li>B can remain after the 50:50 <strong>if B is incorrect and it happens to be returned by 50:50 along with the correct answer</strong>:<ul>
+<li>The probability of this is the joint probability that B is incorrect (or 30%) and that B remains after the 50:50. If we assume that the answer is, say, A (though this holds regardless of which non-B answer we assume is correct), possible tuples resulting from the 50:50 are <span class="math">\(\{A,B\}\)</span>, <span class="math">\(\{A,C\}\)</span>, and <span class="math">\(\{A,D\}\)</span>. We notice that B appears in 1 out of 3, or 30%.</li>
+</ul>
+</li>
+<li>Thus, the probability that B remains after the 50:50 is <span class="math">\((0.7 * 1)+(0.3 * 0.3)=0.79\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Now we can just plug in these quantities and solve:</p>
+<p><span class="math">\(P(A|B)=\frac{1 * 0.7}{0.79}\)</span></p>
+<p>Which gives us <span class="math">\(P(A|B)=\frac{0.7}{0.79}=0.8860759\)</span></p>
+<p>So if we originally assign 70% credibility to answer B and it remains after our 50:50, we can then reasonably assign 88.6% credibility to answer B, according to Bayes' Theorem.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=2019-10-04 Riddler&amp;url=../../2019/10/riddler-2019-10-04.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=../../2019/10/riddler-2019-10-04.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=../../2019/10/riddler-2019-10-04.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="../../tag/fivethirtyeight">FiveThirtyEight</a><a href="../../tag/riddler">Riddler</a><a href="../../tag/r">R</a><a href="../../tag/probability">probability</a><a href="../../tag/conditional-probability">conditional probability</a><a href="../../tag/bayes">bayes</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <!-- ##### begin disqus comments ##### -->
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                
+                /**/
+                var disqus_config = function () {
+                this.page.url = '../../2019/10/riddler-2019-10-04.html';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = '2019/10/riddler-2019-10-04.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                /**/
+
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://jordynelson.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                <section class="post-comments">
+                      <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="2019/10/riddler-2019-10-04.html" >Show Comments</a>
+                  <div id="disqus_thread"></div>
+                </section>
+                <!-- ##### end disqus comments ##### -->
+
+                <!-- ##### begin neighbors prev and next articles ##### -->
+                <aside class="post-nav">
+                    <a class="post-nav-next" href="../../2019/12/riddler-2019-12-15.html">
+                        <section class="post-nav-teaser" style="background: url(../../theme/assets_images/randy-fath-dELtyCFlNG0-unsplash.jpg); background-size: cover; background-repeat: no-repeat;">
+                            <i class="ic ic-arrow-left"></i>
+                            <div class="post-nav-text">
+                              <h2 class="post-nav-title">2019-12-15 Riddler</h2>
+                              <p class="post-nav-excerpt">Choose 'K' (Karpov or Kasparov)</p>
+                            </div>
+                        </section>
+                    </a>
+                    <a class="post-nav-prev" href="../../2019/09/riddler-2019-09-27.html">
+                        <section class="post-nav-teaser" style="background: url(../../theme/assets_images/gary-shear-comerica-park.jpg); background-size: cover; background-repeat: no-repeat;">
+                            <i class="ic ic-arrow-right"></i>
+                            <div class="post-nav-text">
+                              <h2 class="post-nav-title">2019-09-27 Riddler</h2>
+                              <p class="post-nav-excerpt">Who will win the Riddler Fall Classic?</p>
+                            </div>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+                <!-- ##### begin neighbors prev and next articles ##### -->
+
+            </div>
+        </article>
+    </main>
+    
+  <!-- ##### begin disqus comment count script ##### -->
+  <script id="dsq-count-scr" src="//jordynelson.disqus.com/count.js" async></script>
+  <!-- ##### end disqus comment count script ##### -->    
+    <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-software" class="credits">Published with <a class="an-link" href="https://github.com/getpelican/pelican"
+              rel="nofollow">Pelican</a></span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-locale" class="credits"><a class="an-link" href="http://madewithloveinbaltimore.org/" title="Made with ♥ in Baltimore">Made
+              with <i class="icon fa fa-heart"></i> in Baltimore</a></span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-theme" class="credits">Theme <a class="an-link" href="https://github.com/jordy248/jordy248"
+              rel="nofollow">Martian</a></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-theme" class="credits">&copy; 2021 Jordy Nelson</span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <div id="credits-social" class="credits">
+            <span id="credits-social-linkedin" class="icon"><a href="https://www.linkedin.com/in/jordynelson/"><i class="fab fa-linkedin"></i></a></span>
+            <span id="credits-social-github" class="icon"><a href="htts://github.com/jordy248"><i class="fab fa-github"></i></a></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="../../theme/js/script.js"></script>
+
+  <!-- Script specified by the user -->
+  <script type="text/javascript" src="../../theme/js/script.js"></script>
+  <script type="text/javascript" src="../../theme/js/myscript.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78411303-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-78411303-1', { 'anonymize_ip': true });
+    </script>
+</body>
+
+</html>

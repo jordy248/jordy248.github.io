@@ -1,0 +1,43 @@
+{# <!-- Choosing cover image --> #}
+{% if page.og_image %}
+    {% if page.og_image|lower|truncate(4, True, '') == "http" %}
+        {% set default_cover = page.og_image %}
+    {% else %}
+        {% set default_cover = SITEURL+"/"+page.og_image %}
+    {% endif %}
+{% elif page.cover %}
+    {% if page.cover|lower|truncate(4, True, '') == "http" %}
+        {% set default_cover = page.cover %}
+    {% else %}
+        {% set default_cover = SITEURL+"/"+page.cover %}
+    {% endif %}
+{% elif HEADER_COVER %}
+  {% set default_cover = SITEURL+"/"+HEADER_COVER %}
+{% else %}
+  {% set default_cover = SITEURL+"/"+THEME_STATIC_DIR+"/images/post-bg.jpg" %}
+{% endif %}
+
+{# <!-- Choosing description --> #}
+{% if page.headline %}
+    {% set description = page.headline %}
+{% elif page.summary %}
+    {% set description = page.summary|striptags|truncate(140) %}
+{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "{{ page.title|striptags }}",
+  "headline": "{{ page.title|striptags }}",
+  "datePublished": "{{ page.date }}",
+  "dateModified": "{{ page.modified }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author.name }}",
+    "url": "{{ SITEURL }}/{{ page.author.url }}"
+  },
+  "image": "{{ default_cover }}",
+  "url": "{{ SITEURL }}/{{ page.url }}",
+  "description": "{{ description }}"
+}
+</script>
