@@ -4,6 +4,11 @@ version = "0.1.0"
 description = ""
 authors = ["jordy248 <jordy248@gmail.com>"]
 
+packages = [
+    { include = "poetry_scripts" },
+    { include = "poetry_scripts/**/*.py" },
+]
+
 [tool.poetry.dependencies]
 python = "^3.7"
 pelican = "4.2.0"
@@ -27,6 +32,9 @@ zipp = "3.1.0"
 "zope.interface" = "5.1.0"
 
 [tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+freeze_requirements = "poetry_scripts.scripts:freeze_requirements"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
